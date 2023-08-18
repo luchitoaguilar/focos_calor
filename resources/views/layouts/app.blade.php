@@ -120,7 +120,7 @@
         <div class="container" style="margin-top: 70px"></div>
 
         <div class="container"></div>
-        <main class="py-4 container">
+        <main class="container-fluid">
             @yield('content')
         </main>
         @include('layouts.partials.footer')
