@@ -22,11 +22,5 @@ Route::group(['as' => 'api.', 'namespace' => 'Api'], function () {
      * Outlets Endpoints
      */
     Route::get('outlets', 'OutletController@index')->name('outlets.index');
-
-
-//PON
-Route::get('/pon', 'HomeController@pon')->name('pon');
-
-//MISION
-Route::get('/mision', 'HomeController@mision')->name('mision');
+    
 });

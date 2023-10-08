@@ -41,3 +41,9 @@ Route::get('/outlets/ver_datos/{id}', [App\Http\Controllers\OutletController::cl
 
 //Unidades dependientes
 Route::get('outlets/unidad_dependiente/{division}', [App\Http\Controllers\UnidadController::class, 'unidades'])->name('unidad_dependiente');
+
+//PON
+Route::get('/pon', 'HomeController@pon')->name('pon');
+
+//MISION
+Route::get('/mision', 'HomeController@mision')->name('mision');
