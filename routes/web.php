@@ -47,3 +47,9 @@ Route::get('/pon', 'HomeController@pon')->name('pon');
 
 //MISION
 Route::get('/mision', 'HomeController@mision')->name('mision');
+
+//VISION
+Route::get('/vision', 'HomeController@vision')->name('vision');
+
+//OBJETIVO
+Route::get('/objetivo', 'HomeController@objetivo')->name('objetivo');

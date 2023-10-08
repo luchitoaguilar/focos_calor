@@ -45,4 +45,24 @@ class HomeController extends Controller
     {
         return view('outlets.mision');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function vision()
+    {
+        return view('outlets.vision');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function objetivo()
+    {
+        return view('outlets.objetivo');
+    }
 }

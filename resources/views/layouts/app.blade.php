@@ -44,8 +44,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('mision') }}">{{ __('Misión') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('Visión') }}</a>
-                                <a class="dropdown-item" href="#">Objetivo</a>
+                                <a class="dropdown-item" href="{{ route('vision') }}">{{ __('Visión') }}</a>
+                                <a class="dropdown-item" href="{{ route('objetivo') }}">Objetivo</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Aplicación</a>
                                 <a class="dropdown-item" href="#">Importancia</a>
@@ -88,13 +88,13 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('mision') }}">{{ __('Misión') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('Visión') }}</a>
-                                <a class="dropdown-item" href="#">Objetivo</a>
-                                <a class="dropdown-item" href="#">Aplicación</a>
+                                <a class="dropdown-item" href="{{ route('vision') }}">{{ __('Visión') }}</a>
+                                <a class="dropdown-item" href="{{ route('objetivo') }}">Objetivo</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Aplicación</a>
+                                <a class="dropdown-item" href="#">Presentación</a>
+                                <a class="dropdown-item" href="#">Objeto</a>
+                                <a class="dropdown-item" href="#">Finalidad</a>
                                 <a class="dropdown-item" href="#">Importancia</a>
-                                <a class="dropdown-item" href="#">Aplicación</a>
                             </div>
                         </li>
                         <li class="nav-item">
