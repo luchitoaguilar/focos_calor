@@ -21,20 +21,29 @@ class CreateUnidadesTable extends Migration
             $table->string('tipo', 60)->nullable();
             $table->unsignedInteger('dependencia');
             $table->integer('activo')->default(1);
-            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('creador_id');
             $table->timestamps();
 
-            $table->foreign('creator_id')->references('id')->on('users')->onDelete('restrict');
+            //comentado por necesidad de users uni_id
+            // $table->foreign('creador_id')->references('id')->on('users')->onDelete('restrict');
             $table->foreign('dependencia')->references('id')->on('divisiones')->onDelete('restrict');
         });
 
+        \App\Models\Unidades::create([
+            'codigo'          => 'ADMIN',
+            'nombre'              => 'ADMIN',
+            'ubicacion'     => 'ADMIN',
+            'tipo'     => 'ADMIN',
+            'dependencia'     => 1,
+            'creador_id' => 1,
+        ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RAA-6',
             'nombre'              => 'REGIMIENTO DE ARTILLERIA ANTIAEREA 6 "MCAL. BILBAO RIOJA"',
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RAA-8',
@@ -42,7 +51,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RECB-1',
@@ -50,7 +59,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REEPPN-1',
@@ -58,7 +67,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 9,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'BATING-VII',
@@ -66,7 +75,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RESA-25',
@@ -74,7 +83,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'BATING-II',
@@ -82,7 +91,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'BATING-II',
@@ -90,7 +99,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'BATING-VI',
@@ -98,7 +107,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COBIJA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 1,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'R.FF.CC.AE-18',
@@ -106,7 +115,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COCHABAMBA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 7,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RA-1',
@@ -114,7 +123,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RA-3',
@@ -122,7 +131,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'PP.UU',
             'dependencia'     => 3,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RA-4',
@@ -130,7 +139,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 4,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RA-5',
@@ -138,7 +147,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COCHABAMBA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RA-7',
@@ -146,7 +155,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 7,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-1',
@@ -154,7 +163,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'PP.UU',
             'dependencia'     => 4,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-10',
@@ -162,7 +171,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-2',
@@ -170,7 +179,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TRINIDAD',
             'tipo'     => 'PP.UU',
             'dependencia'     => 6,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-3',
@@ -178,7 +187,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VILLAMONTES',
             'tipo'     => 'PP.UU',
             'dependencia'     => 3,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-6',
@@ -186,7 +195,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-7',
@@ -194,7 +203,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RC-8',
@@ -202,7 +211,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RCB-2',
@@ -210,7 +219,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REIM-23',
@@ -218,7 +227,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RCM-4',
@@ -226,7 +235,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RAA-6',
@@ -234,7 +243,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REA-2',
@@ -242,7 +251,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'GUAQUI',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
 
 
@@ -252,7 +261,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-11',
@@ -260,7 +269,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'PP.UU',
             'dependencia'     => 4,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-13',
@@ -268,7 +277,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-14',
@@ -276,7 +285,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-15',
@@ -284,7 +293,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'PP.UU',
             'dependencia'     => 5,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-17',
@@ -292,7 +301,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TRINIDAD',
             'tipo'     => 'PP.UU',
             'dependencia'     => 6,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-19',
@@ -300,7 +309,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COCHABAMBA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 7,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-2',
@@ -308,7 +317,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-20',
@@ -316,7 +325,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VILLAMONTES',
             'tipo'     => 'PP.UU',
             'dependencia'     => 3,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-21',
@@ -324,7 +333,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-26',
@@ -332,7 +341,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 9,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-27',
@@ -340,7 +349,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-29',
@@ -348,7 +357,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TRINIDAD',
             'tipo'     => 'PP.UU',
             'dependencia'     => 6,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-3',
@@ -356,7 +365,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-5',
@@ -364,7 +373,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBIBOBO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 3,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-31',
@@ -372,7 +381,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 9,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-32',
@@ -380,7 +389,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 9,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-33',
@@ -388,7 +397,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 9,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-35',
@@ -396,7 +405,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COBIJA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 1,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-4',
@@ -404,7 +413,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-6',
@@ -412,7 +421,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'PP.UU',
             'dependencia'     => 4,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RI-7',
@@ -420,7 +429,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RIAT-30',
@@ -428,7 +437,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'APOLO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RIM-8',
@@ -436,7 +445,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 11,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RSM-24',
@@ -444,7 +453,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'ORURO',
             'tipo'     => 'PP.UU',
             'dependencia'     => 2,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RSS-12',
@@ -452,7 +461,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'RSS-16',
@@ -460,7 +469,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TRINIDAD',
             'tipo'     => 'PP.UU',
             'dependencia'     => 6,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'BATING-V',
@@ -468,7 +477,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 10,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REPM-IV',
@@ -476,7 +485,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COBIJA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 1,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REPM-II',
@@ -484,7 +493,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'PP.UU',
             'dependencia'     => 8,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Unidades::create([
             'codigo'          => 'REPM-III',
@@ -492,7 +501,7 @@ class CreateUnidadesTable extends Migration
             'ubicacion'     => 'COCHABAMBA',
             'tipo'     => 'PP.UU',
             'dependencia'     => 7,
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
     }
 

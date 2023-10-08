@@ -17,7 +17,16 @@ Route::get('/', 'OutletMapController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/registrar', 'Auth\RegisterController@create')->name('register.create');
+Route::post('/registrar/guardar', 'Auth\RegisterController@store')->name('register.store');
+Route::get('/usuarios/listar', 'Auth\RegisterController@listar')->name('register.listar');
+Route::get('/usuarios', 'Auth\RegisterController@index')->name('register.index');
+Route::get('/usuarios/{id}', 'Auth\RegisterController@show')->name('register.show');
+Route::get('/usuarios/edit/{id}', 'Auth\RegisterController@edit')->name('register.edit');
+Route::post('/registrar/actualizar', 'Auth\RegisterController@update')->name('register.update');
 
 /*
  * Outlets Routes
@@ -32,3 +41,9 @@ Route::get('/outlets/ver_datos/{id}', [App\Http\Controllers\OutletController::cl
 
 //Unidades dependientes
 Route::get('outlets/unidad_dependiente/{division}', [App\Http\Controllers\UnidadController::class, 'unidades'])->name('unidad_dependiente');
+
+//PON
+Route::get('/pon', 'HomeController@pon')->name('pon');
+
+//MISION
+Route::get('/mision', 'HomeController@mision')->name('mision');

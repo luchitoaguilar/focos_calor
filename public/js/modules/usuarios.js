@@ -1,12 +1,12 @@
 $(function () {
-    var focoTabla = $('#tabla-focos-calor').DataTable({
+    var focoTabla = $('#tabla-usuario').DataTable({
         processing: true,
         deferRender: true,
         serverSide: true,
         responsive: true,
         autoWidth: false,
         ajax: {
-            url: listar_focos,
+            url: listar_usuarios,
         },
         columnDefs: [{
             "searchable": false,
@@ -16,15 +16,11 @@ $(function () {
         columns: [
             { data: null, title: 'No.', },
             { data: 'id', name: 'id', orderable: false, searchable: false, visible: false },
-            { data: 'name', name: 'name', title: 'Nombre/ID', orderable: false, searchable: true },
-            { data: 'descripcion', name: 'descripcion', title: 'Descripcion', orderable: false, searchable: true },
-            { data: 'fecha', name: 'fecha', title: 'Fecha', orderable: true, searchable: true },
-            { data: 'nivel', name: 'nivel', title: 'Nivel', orderable: false, searchable: true },
+            { data: 'name', name: 'name', title: 'Nombre y Apellido', orderable: false, searchable: true },
+            { data: 'email', name: 'email', title: 'E-mail', orderable: false, searchable: true },
+            { data: 'rol', name: 'rol', title: 'Rol', orderable: true, searchable: true },
             { data: 'division', name: 'division', title: 'Division', orderable: true, searchable: true },
             { data: 'unidad', name: 'unidad', title: 'Unidad', orderable: true, searchable: true },
-            { data: 'latitude', name: 'latitude', title: 'Latitud', orderable: false, searchable: true },
-            { data: 'longitude', name: 'longitude', title: 'Longitud', orderable: false, searchable: true },
-            { data: 'estado', name: 'estado', title: 'Estado', orderable: false, searchable: false },
             { data: 'detalles', name: 'detalles', title: 'Opciones', orderable: false, searchable: false },
         ],
         // language: { 'url': ruta_tabla_traduccion },

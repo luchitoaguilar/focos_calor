@@ -96,7 +96,7 @@ class OutletController extends Controller
     {
         $this->authorize('create', new Outlet);
 
-        $divisiones = Divisiones::get();
+        $divisiones = Divisiones::get()->except(1);
         // dd($divisiones);
         return view('outlets.create', compact('divisiones'));
     }
@@ -168,7 +168,7 @@ class OutletController extends Controller
         // $outlet->complemento = $request->complemento;
         // $outlet->expedido_id = $request->expedido_id;
         // $outlet->telefono = $request->telefono;
-        $outlet->creator_id = auth()->id();
+        $outlet->creador_id = auth()->id();
 
         $outlet->save();
 
@@ -196,7 +196,7 @@ class OutletController extends Controller
     {
         $this->authorize('update', $outlet);
 
-        $divisiones = Divisiones::get();
+        $divisiones = Divisiones::get()->except(1);
         $unidades = Unidades::get();
 
         return view('outlets.edit', compact('outlet', 'divisiones', 'unidades'));
@@ -272,7 +272,7 @@ class OutletController extends Controller
             }
         }
 
-        $outlet->creator_id = auth()->id();
+        $outlet->creador_id = auth()->id();
         $outlet->archivo = $direccion_archivo;
         //  dd($outlet);
         $outlet->save();

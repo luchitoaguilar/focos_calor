@@ -29,7 +29,7 @@ class OutletListingTest extends TestCase
                         'latitude'          => (string) $outlet->latitude,
                         'longitude'         => (string) $outlet->longitude,
                         'map_popup_content' => $outlet->map_popup_content,
-                        'creator_id'        => (string) $outlet->creator_id,
+                        'creador_id'        => (string) $outlet->creador_id,
                         'id'                => $outlet->id,
                         'created_at'        => $outlet->created_at,
                         'updated_at'        => $outlet->updated_at,

@@ -25,15 +25,18 @@
                             @endif
                         @endisset
 
-                        <form method="POST" action="{{ route('register.store') }}">
+                        <form method="POST" action="{{ route('register.update') }}">
                             @csrf
                             <div class="form-row">
+                                <input id="id_user" type="text"
+                                        class="form-control{{ $errors->has('id') ? ' is-invalid' : '' }}" name="id_user"
+                                        value="{{ old('id', $users->id) }}" readonly hidden>
                                 <div class="form-group col-md-6">
                                     <label for="name"
                                         class="col-md-4 col-form-label">{{ __('Nombre y Apellido') }}</label>
                                     <input id="name" type="text"
                                         class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                                        value="{{ old('name') }}" required autofocus>
+                                        value="{{ old('name', $users->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -46,7 +49,7 @@
 
                                     <input id="email" type="email"
                                         class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                        value="{{ old('email') }}" required>
+                                        value="{{ old('email', $users->email) }}" required>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -59,9 +62,9 @@
                                 <div class="form-group col-md-6">
                                     <label for="password" class="col-md-4 col-form-label">{{ __('Password') }}</label>
 
-                                    <input id="password" type="password"
+                                    <input id="password" type="password" 
                                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                        name="password" required>
+                                        name="password">
 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -74,49 +77,63 @@
                                         class="col-md-4 col-form-label">{{ __('Confirm Password') }}</label>
 
 
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required>
+                                    <input id="password-confirm" type="password"
+                                        class="form-control{{ $errors->has('password-confirm') ? ' is-invalid' : '' }}"
+                                        name="password_confirmation" >
 
                                 </div>
                             </div>
+                            <label for="latitude" class="control-label" style="color: red">Deje en blanco la contraseña si no desea actualizar este dato</label>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="inputState">Rol</label>
-                                    <select class="selectpicker form-control{{ $errors->has('rol') ? ' is-invalid' : '' }}"
-                                        id="rol_id" name="rol_id">
+                                    <select onChange="imprimirValor()"
+                                        class="selectpicker form-control{{ $errors->has('rol') ? ' is-invalid' : '' }}"
+                                        id="rol_id" name="rol_id" value="{{ old('rol_id', $users->rol_id) }}">
                                         <option value=""> Selecciona un Rol </option>
                                         @isset($roles)
                                             @foreach ($roles as $roles)
-                                                <option value="{{ old('rol_id', $roles->id) }}" required>
+                                                <option value="{{ old('rol_id', $roles->id) }}"
+                                                    {{ $roles->id == $users->rol_id ? 'selected="selected"' : '' }} required>
                                                     {{ $roles->rol }}</option>
                                             @endforeach
                                         @endisset
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group" style="display: none" id="divi" name="divi">
+                                    <div class="form-group" style="display: " id="divi" name="divi">
                                         <label for="latitude" class="control-label">{{ __('outlet.division') }}</label>
                                         <select
                                             class="selectpicker form-control{{ $errors->has('latitude') ? ' is-invalid' : '' }}"
                                             id="division" name="division">
                                             <option value=""> Selecciona una Division </option>
                                             @foreach ($divisiones as $divisiones)
-                                                <option value="{{ old('division', $divisiones->id -1) }}" required>
+                                                <option value="{{ old('division', $divisiones->id) }} "
+                                                    {{ $divisiones->id - 1 == $users->div_id ? 'selected="selected"' : '' }}
+                                                    required>
                                                     {{ $divisiones->nombre }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group" style="display: none" id="uni" name="uni">
+                                    <div class="form-group" style="display: " id="uni" name="uni">
                                         <label for="unidad" class="control-label">{{ __('outlet.unidad') }}</label>
                                         <select class="form-control formNuevo" name="unidad" id='unidad'>
-                                            <option value=""> Selecciona una Unidad </option>
+                                            <option value=""> Selecciona una Division </option>
+                                            @foreach ($unidades as $unidades)
+                                                <option value="{{ old('unidad', $unidades->id) }} "
+                                                    {{ $unidades->id == $users->uni_id ? 'selected="selected"' : '' }}
+                                                    required>
+                                                    {{ $unidades->nombre }}</option>
+                                            @endforeach
                                         </select>
                                         {!! $errors->first('unidad', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                     </div>
                                 </div>
                             </div>
+                            <label for="latitude" class="control-label" style="color: red">*Debe seleccionar un rol para
+                                realizar las modificaciones a este usuario</label>
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
@@ -134,44 +151,75 @@
 
 @push('scripts')
     <script>
-        ///select de unidades
-        $('#rol_id').on('change', function(e) {
+        window.onload = function() {
+            imprimirValor();
+        }
 
-            var dependencia = e.target.value;
+        function imprimirValor() {
 
-            if (dependencia == 1) {
-                $("#divi").hide();
-                $("#uni").hide();
-            }
+            var select = document.getElementById("rol_id");
+            var div = document.getElementById("division");
 
-            if (dependencia == 2) {
-                $("#divi").show();
-                $("#uni").hide();
-            }
 
-            if (dependencia == 3) {
-                $("#divi").show();
-                $("#uni").show();
+            $('#division').on('change', function(e) {
 
-                $('#division').on('change', function(e) {
+                var dependencia = e.target.value;
 
-                    var dependencia = e.target.value;
+                $.get('/outlets/unidad_dependiente/' + dependencia, function(data) {
 
-                    $.get('outlets/unidad_dependiente/' + dependencia, function(data) {
+                    $('#unidad').empty();
 
-                        $('#unidad').empty();
-
-                        $.each(data, function(fetch, subCate) {
-                            for (i = 0; i < subCate.length; i++) {
-                                $('#unidad').append('<option value="' + subCate[i].id +
-                                    '">' +
-                                    subCate[i].nombre + '</option>');
-                            }
-                        })
-
+                    $.each(data, function(fetch, subCate) {
+                        for (i = 0; i < subCate.length; i++) {
+                            $('#unidad').append('<option value="' + subCate[i].id +
+                                '">' +
+                                subCate[i].nombre + '</option>');
+                        }
                     })
-                });
-            }
-        });
+                })
+            });
+
+            ///select de unidades
+            $('#rol_id').on('change', function(e) {
+
+
+                var dependencia = e.target.value;
+
+                if (dependencia == 1) {
+                    $("#divi").hide();
+                    $("#uni").hide();
+                    
+                }
+
+                if (dependencia == 2) {
+                    $("#divi").show();
+                    $("#uni").hide();
+
+                }
+
+                if (dependencia == 3) {
+                    $("#divi").show();
+                    $("#uni").show();
+
+                    $('#division').on('change', function(e) {
+
+                        var dependencia = e.target.value;
+
+                        $.get('/outlets/unidad_dependiente/' + dependencia, function(data) {
+
+                            $('#unidad').empty();
+
+                            $.each(data, function(fetch, subCate) {
+                                for (i = 0; i < subCate.length; i++) {
+                                    $('#unidad').append('<option value="' + subCate[i].id +
+                                        '">' +
+                                        subCate[i].nombre + '</option>');
+                                }
+                            })
+                        })
+                    });
+                }
+            });
+        }
     </script>
 @endpush

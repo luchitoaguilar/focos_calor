@@ -33,7 +33,7 @@ class OutletTest extends TestCase
         $outlet = factory(Outlet::class)->make();
 
         $this->assertInstanceOf(User::class, $outlet->creator);
-        $this->assertEquals($outlet->creator_id, $outlet->creator->id);
+        $this->assertEquals($outlet->creador_id, $outlet->creator->id);
     }
 
     /** @test */

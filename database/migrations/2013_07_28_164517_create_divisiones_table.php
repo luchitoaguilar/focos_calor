@@ -20,88 +20,96 @@ class CreateDivisionesTable extends Migration
             $table->string('ubicacion')->nullable();
             $table->string('tipo', 60)->nullable();
             $table->integer('activo')->default(1);
-            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('creador_id');
             $table->timestamps();
 
-            $table->foreign('creator_id')->references('id')->on('users')->onDelete('restrict');
+            //comentado por necesidad de users div_id
+            // $table->foreign('creador_id')->references('id')->on('users')->onDelete('restrict');
         });
 
+        \App\Models\Divisiones::create([
+            'codigo'          => 'ADMIN',
+            'nombre'              => 'ADMIN',
+            'ubicacion'     => 'ADMIN',
+            'tipo'     => 'ADMIN',
+            'creador_id' => 1,
+        ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-1',
             'nombre'              => 'PRIMERA DIVISION',
             'ubicacion'     => 'COBIJA',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-2',
             'nombre'              => 'SEGUNDA DIVISION',
             'ubicacion'     => 'ORURO',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-3',
             'nombre'              => 'TERCERA DIVISION',
             'ubicacion'     => 'VILLAMONTES',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-4',
             'nombre'              => 'CUARTO DIVISION',
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-5',
             'nombre'              => 'QUINTA DIVISION',
             'ubicacion'     => 'ROBORE',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-6',
             'nombre'              => 'SEXTA DIVISION',
             'ubicacion'     => 'TRINIDAD',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-7',
             'nombre'              => 'SEPTIMA DIVISION',
             'ubicacion'     => 'COCHABAMBA',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-8',
             'nombre'              => 'OCTAVA DIVISION',
             'ubicacion'     => 'SANTA CRUZ',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-9',
             'nombre'              => 'NOVENA DIVISION',
             'ubicacion'     => 'IBUELO',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-10',
             'nombre'              => 'DECIMA DIVISION',
             'ubicacion'     => 'TUPIZA',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-MEC-1',
             'nombre'              => 'PRIMERA DIVISION MECANIZADA',
             'ubicacion'     => 'VIACHA',
             'tipo'     => 'GG.UU',
-            'creator_id' => 1,
+            'creador_id' => 1,
         ]);
     }
 

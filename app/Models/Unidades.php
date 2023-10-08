@@ -15,7 +15,7 @@ class Unidades extends Model
      * @var array
      */
     protected $fillable = [
-        'codigo', 'nombre', 'ubicacion', 'tipo', 'dependencia', 'activo', 'creator_id',
+        'codigo', 'nombre', 'ubicacion', 'tipo', 'dependencia', 'activo', 'creador_id',
     ];
 
 
@@ -28,7 +28,7 @@ class Unidades extends Model
      * @var string[]
      */
     protected $hidden = [
-        'creator_id', 'usuario_modificado_id'
+        'creador_id', 'usuario_modificado_id'
     ];
 
 

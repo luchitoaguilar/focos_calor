@@ -17,7 +17,7 @@ class UnidadController extends Controller
     {
         // $this->authorize('create', new Outlet);
 
-        $unidades = Unidades::where('dependencia', $dependencia)->get();
+        $unidades = Unidades::where('dependencia', $dependencia)->get()->except(1);
         // dd($unidades);
         return with(["unidades" => $unidades]);
     }

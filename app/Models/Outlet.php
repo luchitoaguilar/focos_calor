@@ -17,7 +17,7 @@ class Outlet extends Model
      */
     protected $fillable = [
         'name', 'descripcion', 'latitude', 'longitude', 'rrhh', 'rr_log', 'division', 'unidad', 'nivel',
-        'acciones', 'apoyo', 'efectivo', 'fecha', 'foto', 'video', 'archivo', 'activo', 'creator_id', 'encargado',
+        'acciones', 'apoyo', 'efectivo', 'fecha', 'foto', 'video', 'archivo', 'activo', 'creador_id', 'encargado',
     ];
 
     /**

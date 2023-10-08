@@ -34,10 +34,10 @@ class CreateOutletsTable extends Migration
             $table->string('encargado', 250);
 
             $table->integer('activo')->default(1);
-            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('creador_id');
             $table->timestamps();
 
-            $table->foreign('creator_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('creador_id')->references('id')->on('users')->onDelete('restrict');
         });
     }
 
