@@ -87,7 +87,7 @@
                                 Quienes Somos?
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">{{ __('Misión') }}</a>
+                                <a class="dropdown-item" href="{{ route('mision') }}">{{ __('Misión') }}</a>
                                 <a class="dropdown-item" href="#">{{ __('Visión') }}</a>
                                 <a class="dropdown-item" href="#">Objetivo</a>
                                 <a class="dropdown-item" href="#">Aplicación</a>
