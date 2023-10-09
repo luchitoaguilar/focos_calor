@@ -9,7 +9,7 @@
                 <div class="container" style="text-align: center">
                     <h1 class="display-3 bg-light text-dark" style="color: white; opacity: 0.7">VISIÓN</h1>
                     <h1 class="bg-light text-dark" style="text-align: justify; color:white; opacity: 0.7">
-                        El Ejército de Bolivia contará con un Sistema de Alerta Temprana para el control de Incendios Forestales, debidamente estructurada específica y concreta, efectuando el desarrollo de una valoración de cargos dentro del sistema ajustada a sus contenidos y exigencias, para que de esta manera se puede realizar una evaluación del personal, mejorar sus capacitaciones dentro las GG.UU.CC. en el manejo del sistema de alerta. 
+                        EL EJÉRCITO DE BOLIVIA CONTARÁ CON UN SISTEMA DE ALERTA TEMPRANA PARA EL CONTROL DE INCENDIOS FORESTALES, DEBIDAMENTE ESTRUCTURADA ESPECÍFICA Y CONCRETA, EFECTUANDO EL DESARROLLO DE UNA VALORACIÓN DE CARGOS DENTRO DEL SISTEMA AJUSTADA A SUS CONTENIDOS Y EXIGENCIAS, PARA QUE DE ESTA MANERA SE PUEDE REALIZAR UNA EVALUACIÓN DEL PERSONAL, MEJORAR SUS CAPACITACIONES DENTRO LAS GG.UU.CC. EN EL MANEJO DEL SISTEMA DE ALERTA. 
                     </h1>
                 </div>
             </div>
