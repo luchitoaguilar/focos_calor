@@ -17,8 +17,6 @@
                 transparent 100%);
     }
 
- 
-
     .bg-glass {
         background-color: hsla(0, 0%, 100%, 0.9) !important;
         backdrop-filter: saturate(200%) blur(25px);
