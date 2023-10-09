@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-dark text-center text-white" style="margin-top: 20px; width:100%" id="footer">
+<footer class="footer bg-dark text-center text-white" style="width:100%" id="footer">
     <!-- Grid container -->
     <div class="container p-4">
 

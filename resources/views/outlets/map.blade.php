@@ -3,13 +3,13 @@
 @section('content')
     <div class="card">
         <div class="row">
-            <div class="col-sm-2">
+            {{-- <div class="col-sm-2">
                 <div class="elfsight-app-0a23904d-7ead-4cce-9756-feec7f373a60" style="height: 100%;
                 width: 100%;
                 justify-content: center;
                 align-content: center;"></div>
-            </div>
-            <div class="col-sm-10">
+            </div> --}}
+            <div class="col-sm-12">
                 <div class="card-body" id="mapid"></div>
             </div>
         </div>

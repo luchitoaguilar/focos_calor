@@ -5,8 +5,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-12" >
-            <div class="jumbotron jumbotron-fluid" style="background-image: url('{{asset('assets/incendio6.jpeg')}}');
-            height: 60vh">
+            <div class="jumbotron jumbotron-fluid" style="background-image: url('{{asset('assets/incendio6.jpeg')}}')">
                 <div class="container" style="text-align: center">
                     <h1 class="display-3 bg-light text-dark" style="color: white; opacity: 0.7">VISIÓN</h1>
                     <h1 class="bg-light text-dark" style="text-align: justify; color:white; opacity: 0.7">
