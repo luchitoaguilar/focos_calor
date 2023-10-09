@@ -18,12 +18,12 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Escuela de Comando y Estado Mayor del Ejército</h5>
 
                     <ul class="list-unstyled mb-0">
                         <img src="{{ asset('ecem-logo.jpeg') }}" width="100" height="100" class="d-inline-block align-top"
                     alt="">
                     </ul>
+                    <h5 class="text-uppercase">Escuela de Comando y Estado Mayor del Ejército</h5>
                 </div>
                 <!--Grid column-->
 
