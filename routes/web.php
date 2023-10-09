@@ -13,6 +13,9 @@
 
 use Illuminate\Support\Facades\Auth;
 
+
+URL::forceScheme('https');
+
 Route::get('/', 'OutletMapController@index');
 
 Auth::routes();
