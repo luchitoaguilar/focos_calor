@@ -10,14 +10,14 @@
             </h3>
         </section>
         <!-- Section: Text -->
-
+        <hr style="color: white">
         <!-- Section: Links -->
         <section class="">
             <!--Grid row-->
             <div class="row">
 
                 <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Escuela de Comando y Estado Mayor del Ejército</h5>
 
                     <ul class="list-unstyled mb-0">
@@ -26,8 +26,9 @@
                     </ul>
                 </div>
                 <!--Grid column-->
+
                 <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">APLICACIONES</h5>
 
                     <ul class="list-unstyled mb-0">
@@ -37,12 +38,15 @@
                         <li>
                             <a href="https://www.oruxmaps.com/cs/es" target="_blank" class="text-white">Orux Map</a>
                         </li>
+                        <li>
+                            <a href="https://apppage.net/preview/at.xylem.mapin" target="_blank" class="text-white">MAPinr</a>
+                        </li>
                     </ul>
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">SISTEMAS RELACIONADOS</h5>
 
                     <ul class="list-unstyled mb-0">
@@ -61,6 +65,17 @@
                     </ul>
                 </div>
                 <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="">My. Inf. Jose Lopez Flores</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <img src="{{ asset('lopez.jpeg') }}" width="100" height="100" class="d-inline-block align-top"
+                    alt="">
+                    </ul>
+                </div>
+                <!--Grid column-->
+
             </div>
             <!--Grid row-->
         </section>

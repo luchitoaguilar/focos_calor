@@ -60,7 +60,10 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('pon') }}">{{ __('P.O.N.') }}</a>
                                 <a class="dropdown-item" href="#">{{ __('NN.VV.AA') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('Normas de Seguridad') }}</a>
+                                <a class="dropdown-item" href="#">{{ __('NN.SS.') }}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Boletines</a>
+                                <a class="dropdown-item" href="#">Formulario EDAN</a>
                             </div>
                         </li>
                         <li class="nav-item">
