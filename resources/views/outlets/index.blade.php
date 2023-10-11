@@ -3,7 +3,7 @@
 @section('title', __('outlet.list'))
 
 @section('content')
-<div class="container col-md-11" >
+<div class="container" >
     <div class="row">
         <div class="col-md-12">
             <div class="card text-center border-0">

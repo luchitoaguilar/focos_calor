@@ -97,8 +97,9 @@ class OutletController extends Controller
         $this->authorize('create', new Outlet);
 
         $divisiones = Divisiones::get()->except(1);
+        $unidades = Unidades::get()->except(1);
         // dd($divisiones);
-        return view('outlets.create', compact('divisiones'));
+        return view('outlets.create', compact('divisiones', 'unidades'));
     }
 
     /**

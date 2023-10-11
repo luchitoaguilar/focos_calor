@@ -17,7 +17,7 @@ class Outlet extends Model
      */
     protected $fillable = [
         'name', 'descripcion', 'latitude', 'longitude', 'rrhh', 'rr_log', 'division', 'unidad', 'nivel',
-        'acciones', 'apoyo', 'efectivo', 'fecha', 'foto', 'video', 'archivo', 'activo', 'creador_id', 'encargado',
+        'acciones', 'apoyo', 'efectivo', 'fecha', 'foto', 'video', 'archivo', 'activo', 'creador_id', 'encargado', 'unidad_apoyo',
     ];
 
     /**
@@ -92,6 +92,7 @@ class Outlet extends Model
         elseif ($this->nivel == 'Verde') {
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-success" role="alert">' . $this->nivel . '</div></div>';
         }
+        $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.unidad_apoyo') . ':</strong><br><img src="'. asset('assets/'.$this->unidad_apoyo.'.jpeg').'"  width="60" height="50" /></div>';
         
 
         return $mapPopupContent;

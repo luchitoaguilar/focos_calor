@@ -54,6 +54,11 @@
                                     <td>{{ $outlet->apoyo }}</td>
                                 </tr>
                                 <tr>
+                                    <td>{{ __('outlet.unidad_apoyo') }}</td>
+                                    <td><img src="{{ asset("assets/$outlet->unidad_apoyo.jpeg") }}" width="60"
+                                        height="50" /></td>
+                                </tr>
+                                <tr>
                                     <td>{{ __('outlet.rrhh') }}</td>
                                     <td>{{ $outlet->rrhh }}</td>
                                 </tr>

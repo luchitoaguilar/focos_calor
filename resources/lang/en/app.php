@@ -4,15 +4,15 @@ return [
     // Labels
     'table_no'          => '#',
     'total'             => 'Total',
-    'action'            => 'Actions',
-    'show_detail_title' => 'View :name :type detail',
+    'action'            => 'Actiones',
+    'show_detail_title' => 'Ver :name :type detalle',
 
     // Actions
-    'show'           => 'View Detail',
-    'edit'           => 'Edit',
-    'delete'         => 'Delete',
-    'cancel'         => 'Cancel',
-    'reset'          => 'Reset',
-    'delete_confirm' => 'Are you sure to delete this?',
-    'delete_confirm_button' => 'YES, delete it!',
+    'show'           => 'Ver Detalles',
+    'edit'           => 'Editar',
+    'delete'         => 'Eliminar',
+    'cancel'         => 'Cancelar',
+    'reset'          => 'Resetear',
+    'delete_confirm' => 'Esta seguro que desea eliminar esto?',
+    'delete_confirm_button' => 'SI, Eliminar!',
 ];

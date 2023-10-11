@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
 
 Route::get('/', 'OutletMapController@index');
 
@@ -42,6 +42,38 @@ Route::get('/outlets/activar/{id}', [App\Http\Controllers\OutletController::clas
 Route::resource('outlets', 'OutletController');
 Route::get('/outlets/ver_datos/{id}', [App\Http\Controllers\OutletController::class, 'ver_datos'])->name('ver_datos_outlets');
 
+
+//Documetnacion
+Route::get('/documentacion/listar', 'DocumentacionController@listar')->name('documentacion.listar');
+Route::get('/documentacion/{id}', 'DocumentacionController@show')->name('documentacion.show');
+Route::get('/documentacion', 'DocumentacionController@create')->name('documentacion.create');
+Route::post('/documentacion/guardar', 'DocumentacionController@store')->name('documentacion.store');
+Route::get('/documenta', 'DocumentacionController@index')->name('documentacion.index');
+Route::get('/documentacion/edit/{id}', 'DocumentacionController@edit')->name('DocumentacionController.edit');
+Route::post('/documentacion/actualizar', 'DocumentacionController@update')->name('DocumentacionController.update');
+
+
+//POn
+Route::get('/pon/listar', 'DocumentacionController@listarPon')->name('documentacion.pon.listar');
+Route::get('/doc_pon', 'DocumentacionController@index_pon')->name('documentacion.pon.index');
+
+
+//NNVVAA
+Route::get('/nva/listar', 'DocumentacionController@listarNva')->name('documentacion.nva.listar');
+Route::get('/doc_nva', 'DocumentacionController@index_nva')->name('documentacion.nva.index');
+
+//NS
+Route::get('/ns/listar', 'DocumentacionController@listarNs')->name('documentacion.ns.listar');
+Route::get('/doc_ns', 'DocumentacionController@index_ns')->name('documentacion.ns.index');
+
+//Boletines
+Route::get('/boletines/listar', 'DocumentacionController@listarBoletines')->name('documentacion.boletines.listar');
+Route::get('/doc_boletines', 'DocumentacionController@index_boletines')->name('documentacion.boletines.index');
+
+//Formulario
+Route::get('/form/listar', 'DocumentacionController@listarForm')->name('documentacion.form.listar');
+Route::get('/doc_form', 'DocumentacionController@index_form')->name('documentacion.form.index');
+
 //Unidades dependientes
 Route::get('outlets/unidad_dependiente/{division}', [App\Http\Controllers\UnidadController::class, 'unidades'])->name('unidad_dependiente');
 
@@ -56,3 +88,15 @@ Route::get('/vision', 'HomeController@vision')->name('vision');
 
 //OBJETIVO
 Route::get('/objetivo', 'HomeController@objetivo')->name('objetivo');
+
+//PRESENTACION
+Route::get('/presentacion', 'HomeController@presentacion')->name('presentacion');
+
+//OBJETO
+Route::get('/objeto', 'HomeController@objeto')->name('objeto');
+
+//FINALIDAD
+Route::get('/finalidad', 'HomeController@finalidad')->name('finalidad');
+
+//IMPORTANCIA
+Route::get('/importancia', 'HomeController@importancia')->name('importancia');

@@ -32,8 +32,14 @@
                                         id="division" name="division">
                                         <option value=""> Selecciona una Division </option>
                                         @foreach ($divisiones as $divisiones)
-                                            <option value="{{ old('division', $divisiones->id) }}" required>
-                                                {{ $divisiones->nombre }}</option>
+                                            @if (auth()->user()->id == 1)
+                                                <option value="{{ old('division', $divisiones->id - 1) }}" required>
+                                                    {{ $divisiones->nombre }}</option>
+                                            @else
+                                                <option value="{{ $divisiones->id - 1 }}"
+                                                    {{ $divisiones->id - 1 == auth()->user()->div_id ? 'selected' : '' }}
+                                                    required disabled>{{ $divisiones->nombre }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -41,9 +47,23 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="unidad" class="control-label">{{ __('outlet.unidad') }}</label>
-                                    <select class="form-control formNuevo" name="unidad" id='unidad'>
-                                        <option value=""> Selecciona una Unidad </option>
-                                    </select>
+                                    @if (auth()->user()->id == 1)
+                                        <select class="form-control formNuevo" name="unidad" id='unidad'>
+                                            <option value=""> Selecciona una Unidad </option>
+                                        </select>
+                                    @elseif (auth()->user()->div_id > 1)
+                                        <select class="form-control formNuevo" name="unidad" id='unidad'>
+                                            <option value=""> Selecciona una Unidad </option>
+                                            {{-- @if (auth()->user()->uni_id > 1) --}}
+                                                @foreach ($unidades as $unidades)
+                                                    <option value="{{ $unidades->id }}"
+                                                        {{ $unidades->id == auth()->user()->uni_id ? 'selected' : '' }}
+                                                        required>{{ $unidades->nombre }}</option>
+                                                @endforeach
+                                            {{-- @endif --}}
+                                        </select>
+                                        {{-- @else --}}
+                                    @endif
                                     {!! $errors->first('unidad', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                 </div>
                             </div>
@@ -62,12 +82,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="acciones" class="control-label">{{ __('outlet.acciones') }}</label>
-                                    <select class="form-control formNuevo" name="acciones" id='acciones'>
-                                        <option selected>Seleccione la accion a tomar</option>
-                                        <option value="P.O.N.">P.O.N.</option>
-                                        <option value="NN.VV.AA.">NN.VV.AA.</option>
-                                        <option value="Normas de Seguridad">Normas de Seguridad</option>
+                                    <label for="unidad_apoyo" class="control-label">{{ __('outlet.unidad_apoyo') }}</label>
+                                    <select class="form-control formNuevo" name="unidad_apoyo" id='unidad_apoyo' required>
+                                        <option selected>Seleccione el tipo de Unidad</option>
+                                        <option value="1">Patrulla</option>
+                                        <option value="2">Seccion</option>
+                                        <option value="3">Compañia</option>
+                                        <option value="4">Regimiento</option>
                                     </select>
                                 </div>
                             </div>
@@ -80,7 +101,16 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="acciones"
+                                                        class="control-label">{{ __('outlet.acciones') }}</label>
+                                                    <textarea id="acciones" class="form-control{{ $errors->has('acciones') ? ' is-invalid' : '' }}" name="acciones"
+                                                        rows="4">{{ old('acciones') }}</textarea>
+                                                    {!! $errors->first('acciones', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="rrhh"
                                                         class="control-label">{{ __('outlet.rrhh') }}</label>
@@ -89,7 +119,7 @@
                                                     {!! $errors->first('rrhh', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="rr_log"
                                                         class="control-label">{{ __('outlet.rr_log') }}</label>
@@ -165,14 +195,16 @@
                                                     {!! $errors->first('longitude', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="foto" class="control-label">{{ __('outlet.foto') }}</label>
+                                                    <label for="foto"
+                                                        class="control-label">{{ __('outlet.foto') }}</label>
                                                     <input id="foto"
                                                         class="form-control{{ $errors->has('foto') ? ' is-invalid' : '' }}"
                                                         name="foto" type="file" placeholder="Ingrese el foto" />
                                                     {!! $errors->first('foto', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="video" class="control-label">{{ __('outlet.video') }}</label>
+                                                    <label for="video"
+                                                        class="control-label">{{ __('outlet.video') }}</label>
                                                     <input id="video"
                                                         class="form-control{{ $errors->has('video') ? ' is-invalid' : '' }}"
                                                         name="video" type="file" placeholder="Ingrese el video" />
@@ -270,23 +302,56 @@
         $('#latitude').on('input', updateMarkerByInputs);
         $('#longitude').on('input', updateMarkerByInputs);
 
-        ///select de unidades
-        $('#division').on('change', function(e) {
+        var division = document.getElementById('division');
+        var unidad = document.getElementById('unidad');
 
-            var dependencia = e.target.value;
-            
+        if (division.options[division.selectedIndex].value) {
+
+            var dependencia = division.options[division.selectedIndex].value;
+            var unidad_val = unidad.options[unidad.selectedIndex].value;
+
+
             $.get('unidad_dependiente/' + dependencia, function(data) {
 
                 $('#unidad').empty();
 
-                $.each(data, function(fetch, subCate) {
-                    for (i = 0; i < subCate.length; i++) {
-                        $('#unidad').append('<option value="' + subCate[i].id + '">' +
-                            subCate[i].nombre + '</option>');
-                    }
-                })
+                if (unidad_val) {
+                    console.log('here');
+                    $.each(data, function(fetch, subCate) {
+                        for (i = 0; i < subCate.length; i++) {
+                            $('#unidad').append('<option value="' + subCate[i].id + '" disabled>' +
+                                subCate[i].nombre + '</option>');
+                        }
+                    })
+                } else {
+                    $.each(data, function(fetch, subCate) {
+                        for (i = 0; i < subCate.length; i++) {
+                            $('#unidad').append('<option value="' + subCate[i].id + '" >' +
+                                subCate[i].nombre + '</option>');
+                        }
+                    })
+                }
 
             })
-        });
+        } else {
+            ///select de unidades
+            $('#division').on('change', function(e) {
+
+                var dependencia = e.target.value;
+
+                $.get('unidad_dependiente/' + dependencia, function(data) {
+
+                    $('#unidad').empty();
+
+                    $.each(data, function(fetch, subCate) {
+                        for (i = 0; i < subCate.length; i++) {
+                            $('#unidad').append('<option value="' + subCate[i].id + '">' +
+                                subCate[i].nombre + '</option>');
+                        }
+                    })
+
+                })
+            });
+        }
     </script>
 @endpush

@@ -90,7 +90,7 @@ class RegisterController extends Controller
      */
     public function update(RequestUser $data)
     {
-        dd($data);
+        // dd($data);
         $usuario = User::find($data->id_user);
 
         $divi = 1;

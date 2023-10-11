@@ -9,8 +9,8 @@
                 justify-content: center;
                 align-content: center;"></div>
             </div> --}}
-            <div class="col-sm-12">
-                <div class="card-body" id="mapid"></div>
+            <div class="col-lg-12">
+                <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
             </div>
         </div>
     </div>
@@ -110,6 +110,16 @@
         // map.addLayer(owm);
 
         Temp.addTo(map);
+
+        const myIcon = L.icon({
+        iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+        iconSize: [50, 32], // size of the icon
+        iconAnchor: [22, 16], // point of the icon which will correspond to marker's location
+
+    });
+
+    const marker = L.marker([0, 0, {icon: myIcon}]).addTo(map);
+    marker.setLatLng([50, 20]);
 
         var overlays = {
             Temperatura: Temp,

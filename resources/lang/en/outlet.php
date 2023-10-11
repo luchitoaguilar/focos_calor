@@ -47,5 +47,8 @@ return [
     'efectivo'      => 'Efectivo',
     'foto'          => 'Foto',
     'archivo'       => 'Archivo de Respaldo',
-    'video'         => 'Video'
+    'video'         => 'Video',
+    'unidad_apoyo'  => 'Unidad de Apoyo',
+    'fecha'         => 'Fecha',
+    'encargado'     => 'Encargado'
 ];      

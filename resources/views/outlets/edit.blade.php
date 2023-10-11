@@ -109,20 +109,23 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="acciones"
-                                                    class="control-label">{{ __('outlet.acciones') }}</label>
-                                                <select class="form-control formNuevo" name="acciones" id='acciones'
-                                                    value="{{ old('acciones', $outlet->acciones) }}">
-                                                    <option>Seleccione la accion a tomar</option>
-                                                    <option value="P.O.N."
-                                                        {{ $outlet->acciones == 'P.O.N.' ? 'selected' : '' }}>P.O.N.
+                                                <label for="unidad_apoyo"
+                                                    class="control-label">{{ __('outlet.unidad_apoyo') }}</label>
+                                                <select class="form-control formNuevo" name="unidad_apoyo" id='unidad_apoyo'
+                                                    value="{{ old('unidad_apoyo', $outlet->unidad_apoyo) }}">
+                                                    <option>Seleccione el tipo de Unidad</option>
+                                                    <option value="1"
+                                                        {{ $outlet->unidad_apoyo == '1' ? 'selected' : '' }}>Patrulla
                                                     </option>
-                                                    <option value="NN.VV.AA."
-                                                        {{ $outlet->acciones == 'NN.VV.AA.' ? 'selected' : '' }}>NN.VV.AA.
+                                                    <option value="2"
+                                                        {{ $outlet->unidad_apoyo == '2' ? 'selected' : '' }}>Seccion
                                                     </option>
-                                                    <option value="Normas de Seguridad"
-                                                        {{ $outlet->acciones == 'Normas de Seguridad' ? 'selected' : '' }}>
-                                                        Normas de Seguridad</option>
+                                                    <option value="3"
+                                                        {{ $outlet->unidad_apoyo == '3' ? 'selected' : '' }}>
+                                                        Compañia</option>
+                                                        <option value="4"
+                                                        {{ $outlet->unidad_apoyo == '4' ? 'selected' : '' }}>
+                                                        Regimiento</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -135,7 +138,16 @@
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="acciones"
+                                                                    class="control-label">{{ __('outlet.acciones') }}</label>
+                                                                <textarea id="acciones" class="form-control{{ $errors->has('acciones') ? ' is-invalid' : '' }}" name="acciones"
+                                                                    rows="4">{{ old('acciones', $outlet->acciones) }}</textarea>
+                                                                {!! $errors->first('acciones', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="rrhh"
                                                                     class="control-label">{{ __('outlet.rrhh') }}</label>
@@ -144,7 +156,7 @@
                                                                 {!! $errors->first('rrhh', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="rr_log"
                                                                     class="control-label">{{ __('outlet.rr_log') }}</label>
@@ -295,11 +307,11 @@
                                     <input type="submit" value="{{ __('outlet.update') }}" class="btn btn-success">
                                     <a href="{{ route('outlets.show', $outlet) }}"
                                         class="btn btn-link">{{ __('app.cancel') }}</a>
-                                    @can('delete', $outlet)
-                                        <a href="{{ route('outlets.edit', [$outlet, 'action' => 'delete']) }}"
-                                            id="del-outlet-{{ $outlet->id }}"
-                                            class="btn btn-danger float-right">{{ __('app.delete') }}</a>
-                                    @endcan
+                                    @if (auth()->user()->id == 1)
+                                    <a href="{{ route('outlets.edit', [$outlet, 'action' => 'delete']) }}"
+                                        id="del-outlet-{{ $outlet->id }}"
+                                        class="btn btn-danger float-right">{{ __('app.delete') }}</a>
+                                    @endif
                                 </div>
                             </form>
                         </div>

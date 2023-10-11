@@ -57,10 +57,10 @@
                             <a class="dropdown-item" href="{{ route('vision') }}">{{ __('Visión') }}</a>
                             <a class="dropdown-item" href="{{ route('objetivo') }}">Objetivo</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Presentación</a>
-                            <a class="dropdown-item" href="#">Objeto</a>
-                            <a class="dropdown-item" href="#">Finalidad</a>
-                            <a class="dropdown-item" href="#">Importancia</a>
+                            <a class="dropdown-item" href="{{ route('presentacion') }}">Presentación</a>
+                            <a class="dropdown-item" href="{{ route('objeto') }}">Objeto</a>
+                            <a class="dropdown-item" href="{{ route('finalidad') }}">Finalidad</a>
+                            <a class="dropdown-item" href="{{ route('importancia') }}">Importancia</a>
                         </div>
                     </li>
                     @auth
@@ -88,6 +88,19 @@
                             href="{{ route('outlet_map.guarniciones') }}">{{ __('Jurisdicciones') }}</a>
                     </li>
                     @auth
+                        <li class="nav-item dropdown d-sm-block d-md-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Opciones
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('outlets.index') }}">{{ __('Focos Calor') }}</a>
+                                <a class="dropdown-item" href="{{ route('register.index') }}">{{ __('Usuarios') }}</a>
+                                <a class="dropdown-item" href="#">{{ __('Documentacion') }}</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav ml-auto">
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -157,16 +170,16 @@
                         </a>
                         <!-- Separator without title -->
                         <li class="list-group-item sidebar-separator menu-collapsed"></li>
-                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action bg-dark text-white">
                             <span class="menu-collapsed">Presentación</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action bg-dark text-white">
                             <span class="menu-collapsed">Objeto</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action bg-dark text-white">
                             <span class="menu-collapsed">Finalidad</span>
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action bg-dark text-white">
                             <span class="menu-collapsed">Importancia</span>
                         </a>
                     </div>
@@ -181,15 +194,22 @@
                         </a>
                         <!-- Submenu content -->
                         <div id='submenu2' class="collapse sidebar-submenu">
-                            <a href="{{ route('pon') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
                                 <span class="menu-collapsed">P.O.N.</span>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
                                 <span class="menu-collapsed">NN.VV.AA.</span>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
                                 <span class="menu-collapsed">NN.SS.</span>
                             </a>
+                            <li class="list-group-item sidebar-separator menu-collapsed"></li>
+                        <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <span class="menu-collapsed">Boletines</span>
+                        </a>
+                        <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <span class="menu-collapsed">Formulario EDAN</span>
+                        </a>
                         </div>
                     @endauth
                     <a href="{{ route('outlet_map.index') }}" class="bg-dark list-group-item list-group-item-action">
@@ -211,16 +231,22 @@
                             <small>OPCIONES</small>
                         </li>
                         <!-- /END Separator -->
-                        <a href="#" class="bg-dark list-group-item list-group-item-action">
+                        <a href="{{ route('outlets.index')}}" class="bg-dark list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-fire fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Focos Calor</span>
                             </div>
                         </a>
-                        <a href="#" class="bg-dark list-group-item list-group-item-action">
+                        <a href="{{ route('register.index') }}" class="bg-dark list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-users fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Usuarios</span>
+                            </div>
+                        </a>
+                        <a href="{{ route('documentacion.index') }}" class="bg-dark list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <span class="fa fa-file fa-fw mr-3"></span>
+                                <span class="menu-collapsed">Documentacion</span>
                             </div>
                         </a>
                     @endauth
@@ -242,6 +268,15 @@
                 </main>
             </div>
             <!-- Main Col END -->
+
+            {{-- <div class="col-lg">
+                <div class="card">
+                    <h5 class="card-header font-weight-light">Requirements</h5>
+                    <div class="card-body">
+                        @yield('content')
+                    </div>
+                </div>
+            </div> --}}
 
             @include('layouts.partials.footer')
         </div>

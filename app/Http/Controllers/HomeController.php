@@ -65,4 +65,44 @@ class HomeController extends Controller
     {
         return view('outlets.objetivo');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function presentacion()
+    {
+        return view('outlets.presentacion');
+    }
+
+     /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function objeto()
+    {
+        return view('outlets.objeto');
+    }
+
+     /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function finalidad()
+    {
+        return view('outlets.finalidad');
+    }
+
+     /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function importancia()
+    {
+        return view('outlets.importancia');
+    }
 }
