@@ -134,7 +134,7 @@ class Documentacion extends Model
     public static function dataTableForm(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'Formularios');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'Formulario');
         // dd($focos->id);
 
         return DataTables::of($documentacion)
