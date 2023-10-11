@@ -138,10 +138,10 @@
             <!-- Sidebar -->
             <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
                 <!-- Bootstrap List Group -->
-                <ul class="list-group">
+                <ul class="list-group ">
                     <!-- Separator with title -->
                     <li
-                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed ">
                         <small>MENU PRINCIPAL</small>
                     </li>
                     <!-- /END Separator -->
@@ -157,29 +157,29 @@
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
                         <a href="{{ route('mision') }}"
-                            class="list-group-item list-group-item-action bg-dark text-white">
+                            class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Misión</span>
                         </a>
                         <a href="{{ route('vision') }}"
-                            class="list-group-item list-group-item-action bg-dark text-white">
+                            class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Visión</span>
                         </a>
                         <a href="{{ route('objetivo') }}"
-                            class="list-group-item list-group-item-action bg-dark text-white">
+                            class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Objetivo</span>
                         </a>
                         <!-- Separator without title -->
                         <li class="list-group-item sidebar-separator menu-collapsed"></li>
-                        <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Presentación</span>
                         </a>
-                        <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Objeto</span>
                         </a>
-                        <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Finalidad</span>
                         </a>
-                        <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Importancia</span>
                         </a>
                     </div>
@@ -194,20 +194,20 @@
                         </a>
                         <!-- Submenu content -->
                         <div id='submenu2' class="collapse sidebar-submenu">
-                            <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                                 <span class="menu-collapsed">P.O.N.</span>
                             </a>
-                            <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                                 <span class="menu-collapsed">NN.VV.AA.</span>
                             </a>
-                            <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                            <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                                 <span class="menu-collapsed">NN.SS.</span>
                             </a>
                             <li class="list-group-item sidebar-separator menu-collapsed"></li>
-                        <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Boletines</span>
                         </a>
-                        <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                        <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
                             <span class="menu-collapsed">Formulario EDAN</span>
                         </a>
                         </div>
@@ -266,6 +266,8 @@
                 <main class="container-fluid">
                     @yield('content')
                 </main>
+                <hr>
+                @include('layouts.partials.footer')
             </div>
             <!-- Main Col END -->
 
@@ -278,7 +280,7 @@
                 </div>
             </div> --}}
 
-            @include('layouts.partials.footer')
+            {{-- @include('layouts.partials.footer') --}}
         </div>
     </div>
 

@@ -4,7 +4,7 @@ $(function () {
         deferRender: true,
         serverSide: true,
         responsive: true,
-        autoWidth: false,
+        autoWidth: true,
         ajax: {
             url: listar_focos,
         },
