@@ -141,13 +141,13 @@
                 <ul class="list-group ">
                     <!-- Separator with title -->
                     <li
-                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed bg-secondary" style="background-image: url({{ asset('assets/incendio1.png') }});background-repeat: no-repeat;background-size: cover;">
+                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed bg-secondary" style="background-image: url({{ asset('assets/fondo_nav3.png') }});background-repeat: no-repeat;background-size: cover;">
                         <small style="color: white">MENU PRINCIPAL</small>
                     </li>
                     <!-- /END Separator -->
                     <!-- Menu with submenu -->
                     <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
-                        class="bg-secondary list-group-item list-group-item-action flex-column align-items-start">
+                        class="list-group-item list-group-item-action flex-column align-items-start" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-question fa-fw mr-3"></span>
                             <span class="menu-collapsed">Quienes Somos?</span>
@@ -157,35 +157,35 @@
                     <!-- Submenu content -->
                     <div id='submenu1' class="collapse sidebar-submenu">
                         <a href="{{ route('mision') }}"
-                            class="list-group-item list-group-item-action bg-secondary text-white">
+                            class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Misión</span>
                         </a>
                         <a href="{{ route('vision') }}"
-                            class="list-group-item list-group-item-action bg-secondary text-white">
+                            class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Visión</span>
                         </a>
                         <a href="{{ route('objetivo') }}"
-                            class="list-group-item list-group-item-action bg-secondary text-white">
+                            class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Objetivo</span>
                         </a>
                         <!-- Separator without title -->
                         <li class="list-group-item sidebar-separator menu-collapsed"></li>
-                        <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Presentación</span>
                         </a>
-                        <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Objeto</span>
                         </a>
-                        <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Finalidad</span>
                         </a>
-                        <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Importancia</span>
                         </a>
                     </div>
                     @auth
                         <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
-                            class="bg-secondary list-group-item list-group-item-action flex-column align-items-start">
+                            class="list-group-item list-group-item-action flex-column align-items-start" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file-text fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Documentacion</span>
@@ -194,31 +194,31 @@
                         </a>
                         <!-- Submenu content -->
                         <div id='submenu2' class="collapse sidebar-submenu">
-                            <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                            <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                                 <span class="menu-collapsed">P.O.N.</span>
                             </a>
-                            <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                            <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                                 <span class="menu-collapsed">NN.VV.AA.</span>
                             </a>
-                            <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                            <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                                 <span class="menu-collapsed">NN.SS.</span>
                             </a>
                             <li class="list-group-item sidebar-separator menu-collapsed"></li>
-                        <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Boletines</span>
                         </a>
-                        <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action bg-secondary text-white">
+                        <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                             <span class="menu-collapsed">Formulario EDAN</span>
                         </a>
                         </div>
                     @endauth
-                    <a href="{{ route('outlet_map.index') }}" class="bg-secondary list-group-item list-group-item-action">
+                    <a href="{{ route('outlet_map.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-home fa-fw mr-3"></span>
                             <span class="menu-collapsed">Departamentos</span>
                         </div>
                     </a>
-                    <a href="{{ route('outlet_map.guarniciones') }}" class="bg-secondary list-group-item list-group-item-action">
+                    <a href="{{ route('outlet_map.guarniciones') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-institution fa-fw mr-3"></span>
                             <span class="menu-collapsed">Jurisdicciones</span>
@@ -226,24 +226,23 @@
                     </a>
                     @auth
                         <!-- Separator with title -->
-                        <li
-                            class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                            <small>OPCIONES</small>
+                        <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed bg-secondary"  style="background-image: url({{ asset('assets/fondo_nav3.png') }});background-repeat: no-repeat;background-size: cover;">
+                            <small style="color: white">OPCIONES</small>
                         </li>
                         <!-- /END Separator -->
-                        <a href="{{ route('outlets.index')}}" class="bg-secondary list-group-item list-group-item-action">
+                        <a href="{{ route('outlets.index')}}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-fire fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Focos Calor</span>
                             </div>
                         </a>
-                        <a href="{{ route('register.index') }}" class="bg-secondary list-group-item list-group-item-action">
+                        <a href="{{ route('register.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1" >
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-users fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Usuarios</span>
                             </div>
                         </a>
-                        <a href="{{ route('documentacion.index') }}" class="bg-secondary list-group-item list-group-item-action">
+                        <a href="{{ route('documentacion.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Documentacion</span>
@@ -251,7 +250,7 @@
                         </a>
                     @endauth
                     <a href="#top" data-toggle="sidebar-colapse"
-                        class="bg-secondary list-group-item list-group-item-action d-flex align-items-center">
+                        class="list-group-item list-group-item-action d-flex align-items-center" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span id="collapse-icon" class="fa fa-2x mr-3"></span>
                             <span id="collapse-text" class="menu-collapsed"></span>
