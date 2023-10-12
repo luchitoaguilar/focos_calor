@@ -136,18 +136,18 @@
         <!-- Bootstrap row -->
         <div class="row" id="body-row">
             <!-- Sidebar -->
-            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <div id="sidebar-container" class="sidebar-expanded d-none d-md-block" style="background-image: url({{ asset('assets/fondo_nav3.png') }});background-repeat: no-repeat;background-size: cover;">
                 <!-- Bootstrap List Group -->
                 <ul class="list-group ">
                     <!-- Separator with title -->
                     <li
-                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed ">
-                        <small>MENU PRINCIPAL</small>
+                        class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed bg-secondary" style="background-image: url({{ asset('assets/incendio1.png') }});background-repeat: no-repeat;background-size: cover;">
+                        <small style="color: white">MENU PRINCIPAL</small>
                     </li>
                     <!-- /END Separator -->
                     <!-- Menu with submenu -->
                     <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
-                        class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                        class="bg-secondary list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-question fa-fw mr-3"></span>
                             <span class="menu-collapsed">Quienes Somos?</span>
@@ -185,7 +185,7 @@
                     </div>
                     @auth
                         <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
-                            class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                            class="bg-secondary list-group-item list-group-item-action flex-column align-items-start">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file-text fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Documentacion</span>
@@ -212,13 +212,13 @@
                         </a>
                         </div>
                     @endauth
-                    <a href="{{ route('outlet_map.index') }}" class="bg-dark list-group-item list-group-item-action">
+                    <a href="{{ route('outlet_map.index') }}" class="bg-secondary list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-home fa-fw mr-3"></span>
                             <span class="menu-collapsed">Departamentos</span>
                         </div>
                     </a>
-                    <a href="{{ route('outlet_map.guarniciones') }}" class="bg-dark list-group-item list-group-item-action">
+                    <a href="{{ route('outlet_map.guarniciones') }}" class="bg-secondary list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-institution fa-fw mr-3"></span>
                             <span class="menu-collapsed">Jurisdicciones</span>
@@ -231,19 +231,19 @@
                             <small>OPCIONES</small>
                         </li>
                         <!-- /END Separator -->
-                        <a href="{{ route('outlets.index')}}" class="bg-dark list-group-item list-group-item-action">
+                        <a href="{{ route('outlets.index')}}" class="bg-secondary list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-fire fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Focos Calor</span>
                             </div>
                         </a>
-                        <a href="{{ route('register.index') }}" class="bg-dark list-group-item list-group-item-action">
+                        <a href="{{ route('register.index') }}" class="bg-secondary list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-users fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Usuarios</span>
                             </div>
                         </a>
-                        <a href="{{ route('documentacion.index') }}" class="bg-dark list-group-item list-group-item-action">
+                        <a href="{{ route('documentacion.index') }}" class="bg-secondary list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Documentacion</span>
@@ -251,7 +251,7 @@
                         </a>
                     @endauth
                     <a href="#top" data-toggle="sidebar-colapse"
-                        class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                        class="bg-secondary list-group-item list-group-item-action d-flex align-items-center">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span id="collapse-icon" class="fa fa-2x mr-3"></span>
                             <span id="collapse-text" class="menu-collapsed"></span>
