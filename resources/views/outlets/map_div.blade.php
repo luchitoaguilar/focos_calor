@@ -8,8 +8,8 @@
                 <div class="elfsight-app-0a23904d-7ead-4cce-9756-feec7f373a60">
                 </div>
             </div> --}}
-            <div class="col-sm-12">
-                <div class="card-body" id="mapid"></div>
+            <div class="col-lg-12">
+                <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
             </div>
         </div>
     </div>
@@ -139,18 +139,13 @@
             collapsed: false
         }).addTo(map);
 
-        var layers = [];
-        for (var providerId in providers) {
-            layers.push(providers[providerId]);
-        }
-
-        // L.control.iconLayers(layers).addTo(map);
 
         //https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js
 
         // Termina layers del clima
 
         @can('create', new App\Models\Outlet())
+        console.log('here');
             var theMarker;
 
             map.on('click', function(e) {
