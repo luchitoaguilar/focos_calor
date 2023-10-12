@@ -190,7 +190,7 @@
 <!-- Footer --> --}}
 
 @push('scripts')
-    <script language="JavaScript" type="text/javascript">
+    {{-- <script language="JavaScript" type="text/javascript">
         function comprobar() {
             var ventana_ancho = $(window).width();
             var ventana_alto = $(window).height();
@@ -208,5 +208,5 @@
         $(window).resize(function() {
             comprobar();
         });
-    </script>
+    </script> --}}
 @endpush
