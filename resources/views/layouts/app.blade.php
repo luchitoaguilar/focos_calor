@@ -134,7 +134,7 @@
             </div>
         </nav><!-- NavBar END -->
         <!-- Bootstrap row -->
-        <div class="row" id="body-row">
+        <div class="row" id="body-row" style="background-image: url({{ asset('assets/fondo.jpeg') }});background-repeat: no-repeat;background-size: cover;">
             <!-- Sidebar -->
             <div id="sidebar-container" class="sidebar-expanded d-none d-md-block" style="background-image: url({{ asset('assets/fondo_nav3.png') }});background-repeat: no-repeat;background-size: cover;">
                 <!-- Bootstrap List Group -->
@@ -262,7 +262,7 @@
             <!-- MAIN -->
             <div class="col-lg">
                 <hr>
-                <main class="container-fluid">
+                <main class="container-fluid" >
                     @yield('content')
                 </main>
                 <hr>
