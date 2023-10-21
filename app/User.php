@@ -64,8 +64,22 @@ class User extends Authenticatable
                     return $uni->nombre;
                 }
             })
-            ->editColumn('detalles', function ($usuarios) {
-                return '<a href="' . route('register.show', $usuarios->id) . '"  class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>';
+            ->editColumn('detalles', function ($user) {
+                $button = '<a href="' . route('register.show', $user->id) . '" class="btn btn-primary btn-sm tooltipsC"
+                    aria-hidden="true" title="Detalles">
+                    <i class="fa fa-bars"></i>
+                  </a>';
+    
+                if (auth()->user()->rol_id == 1) {
+                    $button .= '<form action="' . route('register.eliminar', $user->id)  . '" class="d-inline"
+                method="POST">'
+                        . csrf_field() . method_field("delete") . '
+                <button type="submit" id="delete-user" class="btn btn-danger btn-sm tooltipsC  confirm-button" aria-hidden="true"
+                  title="Eliminar este registro"><i class="fa fa-trash"></i>
+                </button>
+                </form>';
+                }
+                return $button;
             })
             ->rawColumns(['rol', 'detalles', 'division', 'unidad'])
             ->toJson();

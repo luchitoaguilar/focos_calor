@@ -30,6 +30,7 @@ Route::get('/usuarios', 'Auth\RegisterController@index')->name('register.index')
 Route::get('/usuarios/{id}', 'Auth\RegisterController@show')->name('register.show');
 Route::get('/usuarios/edit/{id}', 'Auth\RegisterController@edit')->name('register.edit');
 Route::post('/registrar/actualizar', 'Auth\RegisterController@update')->name('register.update');
+Route::delete('/usuarios/eliminar/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'eliminar'])->name('register.eliminar');
 
 /*
  * Outlets Routes

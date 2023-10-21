@@ -139,6 +139,8 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Registrar') }}
                                     </button>
+                                    <a href="{{ route('register.index') }}"
+                                class="btn btn-danger">{{ __('outlet.back_to_index') }}</a>
                                 </div>
                             </div>
                         </form>

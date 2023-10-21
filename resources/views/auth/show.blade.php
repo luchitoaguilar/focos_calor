@@ -40,7 +40,7 @@
                             class="btn btn-warning">{{ __('outlet.edit_user') }}</a>
                     @endcan
                     @if (auth()->check())
-                        <a href="{{ route('register.index') }}" class="btn btn-link">{{ __('outlet.back_to_index') }}</a>
+                        <a href="{{ route('register.index') }}" class="btn btn-danger">{{ __('outlet.back_to_index') }}</a>
                     @else
                         <a href="{{ route('outlet_map.index') }}"
                             class="btn btn-link">{{ __('outlet.back_to_index') }}</a>

@@ -198,5 +198,24 @@ class RegisterController extends Controller
 
         return view('auth.edit', compact('users', 'divisiones', 'roles', 'unidades'));
     }
+
+    /**
+     * Remove the specified outlet from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Outlet  $outlet
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function eliminar(Request $request)
+    {
+        $user = User::find($request->id)->delete();
+
+
+        // if ($request->get('outlet_id') == $outlet->id && $outlet->delete()) {
+            return redirect()->route('register.index');
+        // }
+
+        // return back();
+    }
     
 }
