@@ -34,6 +34,16 @@
                         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
                             <div class="row gx-lg-5 align-items-center mb-5">
                                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+
+                    <img src="{{ asset('ejto.png') }}" width="120" height="120" class="d-inline-block align-top pull-left"
+                    alt="">
+
+                                    <img src="{{ asset('smatife.png') }}" width="120" height="120" class="d-inline-block align-top"
+                    alt="">
+
+                    <img src="{{ asset('ecem_logo.png') }}" width="120" height="120" class="d-inline-block align-top pull-right"
+                    alt="">
+
                                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
                                         ECEME <br />
                                         <span style="color: hsl(218, 81%, 75%)">Escuela de Comando y Estado Mayor del
@@ -86,8 +96,8 @@
                                                         <label class="form-check-label" for="form1Example3"> Recordarme
                                                         </label>
                                                     </div>
-                                                    <a class="btn btn-link" href="{{ route('password.request') }}">Olvidaste
-                                                        tu contraseña?</a>
+                                                    {{-- <a class="btn btn-link" href="{{ route('password.request') }}">Olvidaste
+                                                        tu contraseña?</a> --}}
                                                 </div>
                                                 <!-- Submit button -->
                                                 <button type="submit" class="btn btn-primary btn-block mb-4">

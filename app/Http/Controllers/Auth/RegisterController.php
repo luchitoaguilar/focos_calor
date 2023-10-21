@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'rol_id'    => $data['rol_id'],
-            'div_id'    => $divi,
+            'div_id'    => $divi + 1,
             'uni_id'    => $uni,
         ]);
 
@@ -174,10 +174,10 @@ class RegisterController extends Controller
             ->join('roles', 'rol_id', 'roles.id')
             ->join('divisiones', 'div_id', 'divisiones.id')
             ->join('unidades', 'uni_id', 'unidades.id')
-            ->select('users.*', 'roles.*', 'divisiones.nombre AS divi', 'unidades.nombre AS uni')
+            ->select('users.id as userId', 'users.*', 'roles.*', 'divisiones.nombre AS divi', 'unidades.nombre AS uni')
             ->first();
         $divisiones = Divisiones::get()->except(1);
-
+// dd($user);
         return view('auth.show', compact('user', 'divisiones'));
     }
 

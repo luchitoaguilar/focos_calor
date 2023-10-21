@@ -50,5 +50,10 @@ return [
     'video'         => 'Video',
     'unidad_apoyo'  => 'Unidad de Apoyo',
     'fecha'         => 'Fecha',
-    'encargado'     => 'Encargado'
+    'encargado'     => 'Encargado',
+    'resumen'       => 'Resumen Ejecutivo',
+    'rol'           => 'Rol',
+    'div_id'        => 'Division',
+    'uni_id'        => 'Unidad',
+    'edit_user'     => 'Editar usuario',
 ];      

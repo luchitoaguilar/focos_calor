@@ -37,6 +37,15 @@ class CreateUsersTable extends Migration
             'uni_id'    =>1,
         ]);
 
+        \App\User::create([
+            'email'          => 'lopitos100@gmail.com',
+            'name'              => 'My. Inf. José López Flores ',
+            'password'     => Hash::make('5174533'),
+            'rol_id'     => 1,
+            'div_id'    => 1,
+            'uni_id'    =>1,
+        ]);
+
     }
 
     /**

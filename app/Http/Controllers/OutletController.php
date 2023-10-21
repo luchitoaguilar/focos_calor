@@ -98,7 +98,7 @@ class OutletController extends Controller
 
         $divisiones = Divisiones::get()->except(1);
         $unidades = Unidades::get()->except(1);
-        // dd($divisiones);
+        // dd($unidades);
         return view('outlets.create', compact('divisiones', 'unidades'));
     }
 
@@ -154,12 +154,27 @@ class OutletController extends Controller
         } else {
             $direccion_archivo = "/assets/archivos/archivo_default.pdf";
         }
+        //Almacenamiento del resumen ejecutivo
+        if ($request->file('resumen')) {
+            $file = $request->file('resumen');
+
+            $nombres = 'resumen_' . time() . '.' . $file->getClientOriginalExtension();
+
+            $paths = 'assets/resumen/';
+
+            $file->move($paths, $nombres);
+
+            $direccion_resumen = $paths . $nombres;
+        } else {
+            $direccion_resumen = "/assets/resumen/resumen_default.pdf";
+        }
 
         $outlet = new Outlet($request->all());
         //dd($outlet);
         $outlet->foto = $direccion_foto;
         $outlet->video = $direccion_video;
         $outlet->archivo = $direccion_archivo;
+        $outlet->resumen = $direccion_resumen;
         $outlet->division = $request->division;
         $outlet->unidad = $request->unidad;
 
@@ -273,8 +288,27 @@ class OutletController extends Controller
             }
         }
 
+        if ($request->file('resumen')) {
+            $file = $request->file('resumen');
+
+            $nombres = 'resumen_' . time() . '.' . $file->getClientOriginalExtension();
+
+            $paths = 'assets/resumen/';
+
+            $file->move($paths, $nombres);
+
+            $direccion_resumen = $paths . $nombres;
+        } else {
+            if ($outlet->resumen != '/assets/resumen/resumen_default.png') {
+                $direccion_resumen = $outlet->resumen;
+            } else {
+                $direccion_resumen = "/assets/banner/images/banner_fondo_default.png";
+            }
+        }
+
         $outlet->creador_id = auth()->id();
         $outlet->archivo = $direccion_archivo;
+        $outlet->resumen = $direccion_resumen;
         //  dd($outlet);
         $outlet->save();
 
@@ -290,16 +324,18 @@ class OutletController extends Controller
      * @param  \App\Outlet  $outlet
      * @return \Illuminate\Routing\Redirector
      */
-    public function destroy(Request $request, Outlet $outlet)
+    public function eliminar(Request $request, Outlet $outlet)
     {
-        $this->authorize('delete', $outlet);
+        $foco = Outlet::find($request->id);
 
-        $request->validate(['outlet_id' => 'required']);
+        $foco->eliminar = 0;
 
-        if ($request->get('outlet_id') == $outlet->id && $outlet->delete()) {
+        $foco->save();
+
+        // if ($request->get('outlet_id') == $outlet->id && $outlet->delete()) {
             return redirect()->route('outlets.index');
-        }
+        // }
 
-        return back();
+        // return back();
     }
 }

@@ -32,9 +32,11 @@ class CreateOutletsTable extends Migration
             $table->string('foto', 250)->nullable();
             $table->string('video', 250)->nullable();
             $table->string('archivo', 250)->nullable();
+            $table->string('resumen', 250)->nullable();
             $table->string('encargado', 250);
 
             $table->integer('activo')->default(1);
+            $table->integer('eliminar')->default(1);
             $table->unsignedInteger('creador_id');
             $table->timestamps();
 

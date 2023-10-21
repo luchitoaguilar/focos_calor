@@ -22,6 +22,8 @@
                             <p>{{ $outlet->activo }}</p>
                             <label class="control-label text-primary">{{ __('outlet.archivo') }}</label>
                             <p>{{ $outlet->archivo }}</p>
+                            <label class="control-label text-primary">{{ __('outlet.resumen') }}</label>
+                            <p>{{ $outlet->resumen }}</p>
                             {!! $errors->first('outlet_id', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                         </div>
                         <hr style="margin:0">
@@ -277,7 +279,7 @@
                                     </div>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="archivo"
                                                     class="control-label">{{ __('outlet.archivo') }}</label>
@@ -288,7 +290,18 @@
                                                 {!! $errors->first('archivo', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="resumen"
+                                                    class="control-label">{{ __('outlet.resumen') }}</label>
+                                                <input id="resumen"
+                                                    class="form-control{{ $errors->has('resumen') ? ' is-invalid' : '' }}"
+                                                    name="resumen" id="resumen" type="file"
+                                                    placeholder="Ingrese el resumen a ser empleado" />
+                                                {!! $errors->first('resumen', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="encargado"
                                                     class="control-label">{{ __('outlet.encargado') }}</label>

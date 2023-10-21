@@ -36,7 +36,7 @@
                 </div>
                 <div class="card-footer">
                     @can('update', $user)
-                        <a href="{{ route('register.edit', $user) }}" id="edit-outlet-{{ $user->id }}"
+                        <a href="{{ route('register.edit', $user->userId) }}" id="edit-outlet-{{ $user->userId }}"
                             class="btn btn-warning">{{ __('outlet.edit_user') }}</a>
                     @endcan
                     @if (auth()->check())

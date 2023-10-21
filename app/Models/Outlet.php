@@ -16,7 +16,7 @@ class Outlet extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'descripcion', 'latitude', 'longitude', 'rrhh', 'rr_log', 'division', 'unidad', 'nivel',
+        'name', 'descripcion', 'latitude', 'longitude', 'rrhh', 'rr_log', 'division', 'unidad', 'nivel', 'resumen',
         'acciones', 'apoyo', 'efectivo', 'fecha', 'foto', 'video', 'archivo', 'activo', 'creador_id', 'encargado', 'unidad_apoyo',
     ];
 
@@ -88,12 +88,11 @@ class Outlet extends Model
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-danger" role="alert">' . $this->nivel . '</div></div>';
         } elseif ($this->nivel == 'Amarillo') {
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-warning" role="alert">' . $this->nivel . '</div></div>';
-        }
-        elseif ($this->nivel == 'Verde') {
+        } elseif ($this->nivel == 'Verde') {
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-success" role="alert">' . $this->nivel . '</div></div>';
         }
-        $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.unidad_apoyo') . ':</strong><br><img src="'. asset('assets/'.$this->unidad_apoyo.'.jpeg').'"  width="60" height="50" /></div>';
-        
+        $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.unidad_apoyo') . ':</strong><br><img src="' . asset('assets/' . $this->unidad_apoyo . '.jpeg') . '"  width="60" height="50" /></div>';
+
 
         return $mapPopupContent;
     }
@@ -105,10 +104,7 @@ class Outlet extends Model
     public static function dataTable(): mixed
     {
         //ordenar fecha
-        $focos = Outlet::orderBy('fecha', 'desc')->get();
-        // dd($focos->id);
-        // $division = Divisiones::where('id', $focos->division)->first();
-        // $unidad = Unidades::where('dependencia', $focos->division)->first();
+        $focos = Outlet::orderBy('fecha', 'desc')->where('eliminar', '!=', 0)->get();
 
         return DataTables::of($focos)
             ->addIndexColumn()
@@ -125,8 +121,7 @@ class Outlet extends Model
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-danger btn-flat margin disabled">Rojo</button></div>';
                 } elseif (($focos->nivel == 'Amarillo')) {
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-warning btn-flat margin disabled" style="text-align:center;display:block">Amarillo</button></div>';
-                }
-                elseif (($focos->nivel == 'Verde')) {
+                } elseif (($focos->nivel == 'Verde')) {
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-success btn-flat margin disabled" style="text-align:center;display:block">Verde</button></div>';
                 }
             })
@@ -138,7 +133,24 @@ class Outlet extends Model
                 }
             })
             ->editColumn('detalles', function ($focos) {
-                return '<a href="' . route('outlets.show', $focos->id) . '" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>';
+                $button = '<a href="' . route('outlets.show', $focos->id) . '" class="btn btn-primary btn-sm tooltipsC"
+                    aria-hidden="true" title="Detalles">
+                    <i class="fa fa-bars"></i>
+                  </a>';
+
+                if (auth()->user()->rol_id == 1) {
+                    $button .= '<form action="' . route('outlets.eliminar', $focos->id)  . '" class="d-inline form-eliminar"
+                method="POST">'
+                        . csrf_field() . method_field("delete") . '
+                <button type="submit" class="btn btn-danger btn-sm tooltipsC" aria-hidden="true"
+                  title="Eliminar este registro"><i class="fa fa-trash"></i>
+                </button>
+                </form>';
+                }
+                return $button;
+
+                // return '<a href="' . route('outlets.show', $focos->id) . '" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>
+                //         <a href="' . route('outlet.eliminar', $focos->id) . '" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash"></i> Eliminar</a>';
             })
             ->rawColumns(['action', 'estado', 'detalles', 'nivel', 'division', 'unidad'])
             ->toJson();

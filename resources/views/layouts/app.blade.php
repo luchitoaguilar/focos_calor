@@ -31,7 +31,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('outlets.index') }}">
                 <img src="{{ asset('ecem_logo.png') }}" width="30" height="30" class="d-inline-block align-top"
                     alt="">
                 <span class="menu-collapsed">SMATIFE</span>
@@ -230,12 +230,7 @@
                             <small style="color: white">OPCIONES</small>
                         </li>
                         <!-- /END Separator -->
-                        <a href="{{ route('outlets.index')}}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
-                            <div class="d-flex w-100 justify-content-start align-items-center">
-                                <span class="fa fa-fire fa-fw mr-3"></span>
-                                <span class="menu-collapsed">Focos Calor</span>
-                            </div>
-                        </a>
+
                         <a href="{{ route('register.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1" >
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-users fa-fw mr-3"></span>
@@ -246,6 +241,12 @@
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file fa-fw mr-3"></span>
                                 <span class="menu-collapsed">Documentacion</span>
+                            </div>
+                        </a>
+                        <a href="{{ route('outlets.index')}}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
+                            <div class="d-flex w-100 justify-content-start align-items-center">
+                                <span class="fa fa-fire fa-fw mr-3"></span>
+                                <span class="menu-collapsed">Focos Calor</span>
                             </div>
                         </a>
                     @endauth
@@ -305,6 +306,9 @@
 
     {{-- sweetalert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- chart js --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @stack('scripts')
 
     <script type="text/javascript">

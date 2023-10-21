@@ -17,7 +17,7 @@ class OutletController extends Controller
      */
     public function index(Request $request)
     {
-        $outlets = Outlet::where('activo', 1)->get();
+        $outlets = Outlet::where('activo', 1)->where('eliminar', 1)->get();
 
         $geoJSONdata = $outlets->map(function ($outlet) {
             return [

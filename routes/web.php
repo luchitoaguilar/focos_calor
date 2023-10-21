@@ -38,6 +38,7 @@ Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index'
 Route::get('/our_outlets/guarniciones', 'OutletMapController@index_guarniciones')->name('outlet_map.guarniciones');
 Route::get('/our_outlets/uudd', 'OutletMapController@index_unidades')->name('outlet_map.uudd');
 Route::get('/outlets/listar', [App\Http\Controllers\OutletController::class, 'listar'])->name('listar_outlets');
+Route::delete('/outlets/eliminar/{id}', [App\Http\Controllers\OutletController::class, 'eliminar'])->name('outlets.eliminar');
 Route::get('/outlets/activar/{id}', [App\Http\Controllers\OutletController::class, 'activar'])->name('outlets.activar');
 Route::resource('outlets', 'OutletController');
 Route::get('/outlets/ver_datos/{id}', [App\Http\Controllers\OutletController::class, 'ver_datos'])->name('ver_datos_outlets');

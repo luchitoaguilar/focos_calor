@@ -32,12 +32,12 @@
                                         id="division" name="division">
                                         <option value=""> Selecciona una Division </option>
                                         @foreach ($divisiones as $divisiones)
-                                            @if (auth()->user()->id == 1)
+                                            @if (auth()->user()->rol_id == 1)
                                                 <option value="{{ old('division', $divisiones->id - 1) }}" required>
                                                     {{ $divisiones->nombre }}</option>
                                             @else
                                                 <option value="{{ $divisiones->id - 1 }}"
-                                                    {{ $divisiones->id - 1 == auth()->user()->div_id ? 'selected' : '' }}
+                                                    {{ $divisiones->id == auth()->user()->div_id ? 'selected' : '' }}
                                                     required disabled>{{ $divisiones->nombre }}</option>
                                             @endif
                                         @endforeach
@@ -47,11 +47,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="unidad" class="control-label">{{ __('outlet.unidad') }}</label>
-                                    @if (auth()->user()->id == 1)
+                                    @if (auth()->user()->rol_id == 1)
                                         <select class="form-control formNuevo" name="unidad" id='unidad'>
                                             <option value=""> Selecciona una Unidad </option>
                                         </select>
-                                    @elseif (auth()->user()->div_id > 1)
+                                    @elseif (auth()->user()->uni_id > 1)
                                         <select class="form-control formNuevo" name="unidad" id='unidad'>
                                             <option value=""> Selecciona una Unidad </option>
                                             {{-- @if (auth()->user()->uni_id > 1) --}}
@@ -221,7 +221,7 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="archivo" class="control-label">{{ __('outlet.archivo') }}</label>
                                     <input id="archivo"
@@ -230,7 +230,16 @@
                                     {!! $errors->first('archivo', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="resumen" class="control-label">{{ __('outlet.resumen') }}</label>
+                                    <input id="resumen"
+                                        class="form-control{{ $errors->has('resumen') ? ' is-invalid' : '' }}"
+                                        name="resumen" type="file" placeholder="Ingrese el resumen a ser empleado" />
+                                    {!! $errors->first('resumen', '<span class="invalid-feedback" role="alert">:message</span>') !!}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="encargado" class="control-label">{{ __('outlet.encargado') }}</label>
                                     <input id="encargado"
@@ -283,7 +292,7 @@
         function updateMarker(lat, lng) {
             marker
                 .setLatLng([lat, lng])
-                .bindPopup("Your location :  " + marker.getLatLng().toString())
+                .bindPopup("Tu ubicacion :  " + marker.getLatLng().toString())
                 .openPopup();
             return false;
         };
@@ -310,7 +319,6 @@
             var dependencia = division.options[division.selectedIndex].value;
             var unidad_val = unidad.options[unidad.selectedIndex].value;
 
-
             $.get('unidad_dependiente/' + dependencia, function(data) {
 
                 $('#unidad').empty();
@@ -318,9 +326,12 @@
                 if (unidad_val) {
                     console.log('here');
                     $.each(data, function(fetch, subCate) {
+                        console.log(subCate);
                         for (i = 0; i < subCate.length; i++) {
-                            $('#unidad').append('<option value="' + subCate[i].id + '" disabled>' +
+                            if(subCate[i].id == unidad_val ){
+                                $('#unidad').append('<option value="' + subCate[i].id + '" disabled>' +
                                 subCate[i].nombre + '</option>');
+                            }
                         }
                     })
                 } else {

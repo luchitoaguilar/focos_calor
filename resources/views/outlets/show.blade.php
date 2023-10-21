@@ -31,15 +31,15 @@
                                     <td>{{ __('outlet.nivel') }}</td>
                                     <td>
                                         @if ($outlet->nivel == 'Rojo')
-                                            <div class="alert alert-danger" role="alert">
+                                            <div class="btn btn-danger" role="alert">
                                                 Rojo
                                             </div>
                                         @elseif ($outlet->nivel == 'Amarillo')
-                                            <div class="alert alert-warning" role="alert">
+                                            <div class="btn btn-warning" role="alert">
                                                 Amarillo
                                             </div>
                                         @elseif ($outlet->nivel == 'Verde')
-                                            <div class="alert alert-success" role="alert">
+                                            <div class="btn btn-success" role="alert">
                                                 Verde
                                             </div>
                                         @endif
@@ -104,6 +104,14 @@
                                     <td>
                                         <button type="button" class="btn btn-outline-primary btn-lg btn-block"
                                             data-toggle="modal" data-target="#archivoModal">
+                                            <i class="fa fa-file" aria-hidden="true"></i>
+                                        </button>
+                                </tr>
+                                <tr>
+                                    <td>{{ __('outlet.resumen') }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                                            data-toggle="modal" data-target="#resumenModal">
                                             <i class="fa fa-file" aria-hidden="true"></i>
                                         </button>
                                 </tr>
@@ -194,6 +202,28 @@
                         <div class="modal-body">
                             <img src="{{ asset($outlet->foto) }}" class="img-thumbnail"
                                 style="width: 80%; heigth: 50px">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Resumen -->
+            <div class="modal fade" id="resumenModal" tabindex="-1" role="dialog" aria-labelledby="resumenModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="resumenModalLabel">Resumen Ejecutivo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <embed src="{{ asset($outlet->resumen) }}" type="application/pdf" width="100%"
+                                height="400px" />
+                            </td>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

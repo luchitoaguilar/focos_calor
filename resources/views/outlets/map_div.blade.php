@@ -9,9 +9,7 @@
                 </div>
             </div> --}}
             <div class="col-lg-12">
-                <div class="card-body " id="mapid" style="position: relative; outline-style: none; width: 100px;
-                font-size: 250%;
-                overflow: auto;" tabindex="0"></div>
+                <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
             </div>
         </div>
     </div>

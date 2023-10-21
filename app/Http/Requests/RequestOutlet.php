@@ -43,6 +43,7 @@ class RequestOutlet extends FormRequest
                 'video'         => 'nullable',
                 'foto'          => 'nullable',
                 'archivo'       => 'nullable',
+                'resumen'       => 'nullable',
             ];
         } else {
             return [
@@ -64,6 +65,7 @@ class RequestOutlet extends FormRequest
                 'video'         => 'mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg|max:10000',
                 'foto'          => 'image|mimes:jpeg,png,bmp,jpg,gif|max:5120',
                 'archivo'       => 'mimes:pdf,doc|max:5120',
+                'resumen'       => 'mimes:pdf,doc|max:5120',
             ];
         }
     }
