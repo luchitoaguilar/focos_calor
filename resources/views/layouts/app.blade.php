@@ -195,13 +195,13 @@
                         <!-- Submenu content -->
                         <div id='submenu2' class="collapse sidebar-submenu">
                             <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                                <span class="menu-collapsed">P.O.N.</span>
+                                <span class="menu-collapsed">Planes y P.O.N.</span>
                             </a>
                             <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                                <span class="menu-collapsed">NN.VV.AA.</span>
+                                <span class="menu-collapsed">Bases Legales y resoluciones</span>
                             </a>
                             <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                                <span class="menu-collapsed">NN.SS.</span>
+                                <span class="menu-collapsed">NN.VV.AA y NN.SS.</span>
                             </a>
                             <li class="list-group-item sidebar-separator menu-collapsed"></li>
                         <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-

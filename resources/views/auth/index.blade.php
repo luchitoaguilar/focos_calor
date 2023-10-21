@@ -12,10 +12,10 @@
                         <div class="card-body">
                             <div class="mb-3">
                                 <div class="float-right">
-                                    @can('create', new App\User())
+                                    @if(auth()->user()->id == 1)
                                         <a href="{{ route('register.create') }}"
                                             class="btn btn-success">{{ __('outlet.create') }}</a>
-                                    @endcan
+                                    @endif
                                 </div>
                             </div>
                             <br>

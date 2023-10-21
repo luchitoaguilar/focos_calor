@@ -65,6 +65,10 @@
                             target="_blank" class="text-white">SATIF</a>
                     </p>
                     <p>
+                        <a href="https://incendios.fan-bo.org/Satrifo/mapa-interactivo/" target="_blank"
+                            class="text-white">SATRIFO</a>
+                    </p>
+                    <p>
                         <a href="https://firms.modaps.eosdis.nasa.gov/map/" target="_blank" class="text-white">FIRMS:
                             NASA</a>
                     </p>

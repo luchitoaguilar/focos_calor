@@ -75,7 +75,7 @@
                                     <select class="form-control formNuevo" name="nivel" id='nivel'>
                                         <option selected>Seleccione el nivel</option>
                                         <option value="Rojo">Rojo</option>
-                                        <option value="Amarillo">Amarillo</option>
+                                        <option value="Amarillo" style="color: yellow">Amarillo</option>
                                         <option value="Verde">Verde</option>
                                     </select>
                                 </div>

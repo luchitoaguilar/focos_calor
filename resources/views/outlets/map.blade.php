@@ -6,16 +6,23 @@
             <div class="col-lg-12">
                 <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
             </div>
+            {{-- <div class="col-lg-5">
+                <canvas id="barras" style="display: block; box-sizing: border-box; height: 100%; width: 100%"></canvas>
+            </div> --}}
         </div>
     </div>
-    <hr>
+    {{-- <hr>
     <div class="card">
         <div class="row justify-content-center">
-            <div>
-                <canvas id="myChart" style="display: block; box-sizing: border-box; height: 326px; width: 652px;"></canvas>
+            <div class="col-lg-6">
+                <canvas id="barras" style="display: block; box-sizing: border-box; height: 500px; width: 100%"></canvas>
+            </div>
+
+            <div class="col-lg-6">
+                <canvas id="lineas" style="display: block; box-sizing: border-box; height: 500px; width: 100%"></canvas>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 @section('styles')
@@ -73,6 +80,14 @@
         OpenTopoMap.addTo(map);
 
         //http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=d9cfe451d5a775abaf178aec4951b4b0
+
+        map.scrollWheelZoom.disable();
+        map.on('focus', () => {
+            map.scrollWheelZoom.enable();
+        });
+        map.on('blur', () => {
+            map.scrollWheelZoom.disable();
+        });
 
 
         // Inicio layers del clima
@@ -235,7 +250,8 @@
     </script>
 
     <script>
-        const ctx = document.getElementById('myChart');
+        const ctx = document.getElementById('barras');
+        const linear = document.getElementById('lineas');
 
         let datos = [];
 
@@ -252,7 +268,7 @@
                             'DIV-9', 'DIV-10', 'DIV-MEC-1'
                         ],
                         datasets: [{
-                            label: 'Cantidad de focos de calor por GG.UU.',
+                            label: 'Cantidad de focos de calor',
                             data: datos,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
@@ -280,6 +296,30 @@
                                 'rgba(153, 190, 255, 0.2)',
                                 'rgba(201, 203, 200, 0.2)'
                             ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                new Chart(lineas, {
+                    type: 'line',
+                    data: {
+                        labels: ['DIV-1', 'DIV-2', 'DIV-3', 'DIV-4', 'DIV-5', 'DIV-6', 'DIV-7', 'DIV-8',
+                            'DIV-9', 'DIV-10', 'DIV-MEC-1'
+                        ],
+                        datasets: [{
+                            label: 'Cantidad de focos de calor',
+                            data: datos,
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1,
                             borderWidth: 1
                         }]
                     },

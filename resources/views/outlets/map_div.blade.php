@@ -3,13 +3,11 @@
 @section('content')
     <div class="card">
         <div class="row justify-content-center">
-            {{-- <div class="col-sm-2 center-block" style="position :relative !important; 
-            left: 1% !important; margin-top: 2%">
-                <div class="elfsight-app-0a23904d-7ead-4cce-9756-feec7f373a60">
-                </div>
-            </div> --}}
-            <div class="col-lg-12">
+            <div class="col-lg-7">
                 <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
+            </div>
+            <div class="col-lg-5">
+                <canvas id="barras" style="display: block; box-sizing: border-box; height: 100%; width: 100%"></canvas>
             </div>
         </div>
     </div>
@@ -166,6 +164,98 @@
             });
         @endcan
     </script>
+
+<script>
+    const ctx = document.getElementById('barras');
+    const linear = document.getElementById('lineas');
+
+    let datos = [];
+
+    axios.get('{{ route('api.outlet_map.divisiones') }}')
+        .then(function(response) {
+            for (i = 1; i <= 11; i++) {
+                datos.push(response.data[i]);
+            }
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['DIV-1', 'DIV-2', 'DIV-3', 'DIV-4', 'DIV-5', 'DIV-6', 'DIV-7', 'DIV-8',
+                        'DIV-9', 'DIV-10', 'DIV-MEC-1'
+                    ],
+                    datasets: [{
+                        label: 'Cantidad de focos de calor',
+                        data: datos,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)',
+                            'rgba(75, 192, 189, 0.2)',
+                            'rgba(54, 183, 235, 0.2)',
+                            'rgba(153, 190, 255, 0.2)',
+                            'rgba(59, 203, 159, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)',
+                            'rgba(75, 192, 189, 0.2)',
+                            'rgba(54, 183, 235, 0.2)',
+                            'rgba(153, 190, 255, 0.2)',
+                            'rgba(59, 203, 159, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(lineas, {
+                type: 'line',
+                data: {
+                    labels: ['DIV-1', 'DIV-2', 'DIV-3', 'DIV-4', 'DIV-5', 'DIV-6', 'DIV-7', 'DIV-8',
+                        'DIV-9', 'DIV-10', 'DIV-MEC-1'
+                    ],
+                    datasets: [{
+                        label: 'Cantidad de focos de calor',
+                        data: datos,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+
+    // console.log(datos);
+</script>
+
     {{-- widget del clima --}}
     <script src="{{ asset('js/modules/clima.js') }}" data-use-service-core defer></script>
 @endpush

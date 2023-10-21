@@ -62,7 +62,7 @@ class RequestOutlet extends FormRequest
                 'efectivo'      => 'required',
                 'fecha'         => 'required',
                 'encargado'     => 'required',
-                'video'         => 'mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg|max:10000',
+                'video'         => 'mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg|max:50000',
                 'foto'          => 'image|mimes:jpeg,png,bmp,jpg,gif|max:5120',
                 'archivo'       => 'mimes:pdf,doc|max:5120',
                 'resumen'       => 'mimes:pdf,doc|max:5120',

@@ -132,13 +132,13 @@ class OutletController extends Controller
 
             $nombres = 'video_' . time() . '.' . $file->getClientOriginalExtension();
 
-            $paths = 'assets/videos';
+            $paths = 'assets/videos/';
 
             $file->move($paths, $nombres);
 
             $direccion_video = $paths . $nombres;
         } else {
-            $direccion_video = "/assets/video/firma/video_default.pdf";
+            $direccion_video = "/assets/videos/video_default.pdf";
         }
         //Almacenamiento del archivo de respaldo
         if ($request->file('archivo')) {
