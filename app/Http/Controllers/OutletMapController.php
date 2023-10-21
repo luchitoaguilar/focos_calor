@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Outlet;
 use Illuminate\Http\Request;
 
 class OutletMapController extends Controller
@@ -38,4 +39,6 @@ class OutletMapController extends Controller
     {
         return view('outlets.map_uudd');
     }
+
+    
 }

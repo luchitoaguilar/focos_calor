@@ -38,4 +38,45 @@ class OutletController extends Controller
             'features' => $geoJSONdata,
         ]);
     }
+
+    /**
+     * Show the outlet listing in LeafletJS map.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\View\View
+     */
+    public function divisiones(Request $request)
+    {
+        $DIV1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 2)->get();
+        $DIV2 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 3)->get();
+        $DIV3 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 4)->get();
+        $DIV4 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 5)->get();
+        $DIV5 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 6)->get();
+        $DIV6 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 7)->get();
+        $DIV7 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 8)->get();
+        $DIV8 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 9)->get();
+        $DIV9 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 10)->get();
+        $DIV10 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 11)->get();
+        $DIVMEC1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 12)->get();
+
+        // $data = $divisiones->map(function ($divisiones) {
+        //     return [
+        //         'DIV-1'       => $divisiones->id == 1,
+        //     ];
+        // });
+
+        return response()->json([
+            'DIV1' => count($DIV1),
+            'DIV2' => count($DIV2),
+            'DIV3' => count($DIV3),
+            'DIV4' => count($DIV4),
+            'DIV5' => count($DIV5),
+            'DIV6' => count($DIV6),
+            'DIV7' => count($DIV7),
+            'DIV8' => count($DIV8),
+            'DIV9' => count($DIV9),
+            'DIV10' => count($DIV10),
+            'DIVMEC1' => count($DIVMEC1),
+        ]);
+    }
 }

@@ -56,4 +56,5 @@ return [
     'div_id'        => 'Division',
     'uni_id'        => 'Unidad',
     'edit_user'     => 'Editar usuario',
+    'tipo'          => 'Tipo',
 ];      

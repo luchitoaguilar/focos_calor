@@ -3,14 +3,16 @@
 @section('content')
     <div class="card">
         <div class="row justify-content-center">
-            {{-- <div class="col-sm-2">
-                <div class="elfsight-app-0a23904d-7ead-4cce-9756-feec7f373a60" style="height: 100%;
-                width: 100%;
-                justify-content: center;
-                align-content: center;"></div>
-            </div> --}}
             <div class="col-lg-12">
                 <div class="card-body " id="mapid" style="position: relative; outline-style: none;" tabindex="0"></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="card">
+        <div class="row justify-content-center">
+            <div>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
@@ -64,11 +66,11 @@
         ], {{ config('leaflet.zoom_level') }});
 
         var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-	    maxZoom: 17,
-	    attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-	    opacity: 0.90
-	  });
-	  OpenTopoMap.addTo(map);
+            maxZoom: 17,
+            attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+            opacity: 0.90
+        });
+        OpenTopoMap.addTo(map);
 
         //http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=d9cfe451d5a775abaf178aec4951b4b0
 
@@ -112,14 +114,16 @@
         Temp.addTo(map);
 
         const myIcon = L.icon({
-        iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
-        iconSize: [50, 32], // size of the icon
-        iconAnchor: [22, 16], // point of the icon which will correspond to marker's location
+            iconUrl: 'http://leafletjs.com/examples/custom-icons/leaf-green.png',
+            iconSize: [50, 32], // size of the icon
+            iconAnchor: [22, 16], // point of the icon which will correspond to marker's location
 
-    });
+        });
 
-    const marker = L.marker([0, 0, {icon: myIcon}]).addTo(map);
-    marker.setLatLng([50, 20]);
+        const marker = L.marker([0, 0, {
+            icon: myIcon
+        }]).addTo(map);
+        marker.setLatLng([50, 20]);
 
         var overlays = {
             Temperatura: Temp,
@@ -230,6 +234,43 @@
         @endcan
     </script>
 
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        let datos = [];
+
+        axios.get('{{ route('api.outlet_map.divisiones') }}')
+            .then(function(response) {
+                datos = response.data;
+                
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['DIV-1', 'DIV-2', 'DIV-3', 'DIV-4', 'DIV-5', 'DIV-6', 'DIV-7', 'DIV-8',
+                            'DIV-9', 'DIV-10', 'DIV-MEC-1'
+                        ],
+                        datasets: [{
+                            label: 'Cantidad de focos de calor por GG.UU.',
+                            data: datos,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+
+        // console.log(datos);
+    </script>
 
     {{-- widget del clima --}}
     <script src="{{ asset('js/modules/clima.js') }}" data-use-service-core defer></script>

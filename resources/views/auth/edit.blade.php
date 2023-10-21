@@ -109,7 +109,7 @@
                                             <option value=""> Selecciona una Division </option>
                                             @foreach ($divisiones as $divisiones)
                                                 <option value="{{ old('division', $divisiones->id) }} "
-                                                    {{ $divisiones->id - 1 == $users->div_id ? 'selected="selected"' : '' }}
+                                                    {{ $divisiones->id == $users->div_id ? 'selected="selected"' : '' }}
                                                     required>
                                                     {{ $divisiones->nombre }}</option>
                                             @endforeach
