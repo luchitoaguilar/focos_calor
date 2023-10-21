@@ -11,9 +11,9 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <div class="float-right">
-                                @can('create', new App\Models\Outlet())
+                                @if(auth()->user()->rol_id == 1)
                                     <a href="{{ route('documentacion.create') }}" class="btn btn-success">{{ __('outlet.create') }}</a>
-                                @endcan
+                                @endif
                             </div>
                         </div>
                         <br>
