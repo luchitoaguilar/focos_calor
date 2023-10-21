@@ -66,17 +66,17 @@ class OutletController extends Controller
         // });
 
         return response()->json([
-            'DIV1' => count($DIV1),
-            'DIV2' => count($DIV2),
-            'DIV3' => count($DIV3),
-            'DIV4' => count($DIV4),
-            'DIV5' => count($DIV5),
-            'DIV6' => count($DIV6),
-            'DIV7' => count($DIV7),
-            'DIV8' => count($DIV8),
-            'DIV9' => count($DIV9),
-            'DIV10' => count($DIV10),
-            'DIVMEC1' => count($DIVMEC1),
+            '1' => count($DIV1),
+            '2' => count($DIV2),
+            '3' => count($DIV3),
+            '4' => count($DIV4),
+            '5' => count($DIV5),
+            '6' => count($DIV6),
+            '7' => count($DIV7),
+            '8' => count($DIV8),
+            '9' => count($DIV9),
+            '10' => count($DIV10),
+            '11' => count($DIVMEC1),
         ]);
     }
 }

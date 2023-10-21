@@ -12,7 +12,7 @@
     <div class="card">
         <div class="row justify-content-center">
             <div>
-                <canvas id="myChart"></canvas>
+                <canvas id="myChart" style="display: block; box-sizing: border-box; height: 326px; width: 652px;"></canvas>
             </div>
         </div>
     </div>
@@ -241,8 +241,10 @@
 
         axios.get('{{ route('api.outlet_map.divisiones') }}')
             .then(function(response) {
-                datos = response.data;
-                
+                for (i = 1; i <= 11; i++) {
+                    datos.push(response.data[i]);
+                }
+
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -252,6 +254,32 @@
                         datasets: [{
                             label: 'Cantidad de focos de calor por GG.UU.',
                             data: datos,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 205, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(201, 203, 207, 0.2)',
+                                'rgba(75, 192, 189, 0.2)',
+                                'rgba(54, 183, 235, 0.2)',
+                                'rgba(153, 190, 255, 0.2)',
+                                'rgba(201, 203, 200, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(255, 205, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(201, 203, 207, 0.2)',
+                                'rgba(75, 192, 189, 0.2)',
+                                'rgba(54, 183, 235, 0.2)',
+                                'rgba(153, 190, 255, 0.2)',
+                                'rgba(201, 203, 200, 0.2)'
+                            ],
                             borderWidth: 1
                         }]
                     },
