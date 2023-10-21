@@ -50,8 +50,9 @@ Route::get('/documentacion/{id}', 'DocumentacionController@show')->name('documen
 Route::get('/documentacion', 'DocumentacionController@create')->name('documentacion.create');
 Route::post('/documentacion/guardar', 'DocumentacionController@store')->name('documentacion.store');
 Route::get('/documenta', 'DocumentacionController@index')->name('documentacion.index');
-Route::get('/documentacion/edit/{id}', 'DocumentacionController@edit')->name('DocumentacionController.edit');
-Route::post('/documentacion/actualizar', 'DocumentacionController@update')->name('DocumentacionController.update');
+Route::get('/documentacion/edit/{id}', 'DocumentacionController@edit')->name('documentacion.edit');
+Route::post('/documentacion/actualizar', 'DocumentacionController@update')->name('documentacion.update');
+Route::delete('/documentacion/eliminar/{id}', [App\Http\Controllers\DocumentacionController::class, 'eliminar'])->name('documentacion.eliminar');
 
 
 //POn

@@ -305,7 +305,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 
     {{-- sweetalert --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 
     {{-- chart js --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

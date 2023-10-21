@@ -20,7 +20,7 @@ class CreateDocumentacionTable extends Migration
             $table->string('descripcion');
             $table->string('tipo');
             $table->date('fecha');
-            $table->string('archivo');
+            $table->string('archivo')->nullable();
             $table->timestamps();
         });
 

@@ -31,10 +31,10 @@
                     </table>
                 </div>
                 <div class="card-footer">
-                    @can('update', $documentacion)
+                    @if(auth()->user()->rol_id == 1)
                         <a href="{{ route('documentacion.edit', $documentacion) }}" id="edit-outlet-{{ $documentacion->id }}"
-                            class="btn btn-warning">{{ __('outlet.edit_user') }}</a>
-                    @endcan
+                            class="btn btn-warning">{{ __('outlet.edit_doc') }}</a>
+                    @endif
                     @if (auth()->check())
                         <a href="{{ route('documentacion.index') }}" class="btn btn-link">{{ __('outlet.back_to_index') }}</a>
                     @else

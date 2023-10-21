@@ -48,8 +48,25 @@ class Documentacion extends Model
         // dd($focos->id);
 
         return DataTables::of($documentacion)
+        // ->editColumn('detalles', function ($documentacion) {
+        //     return '<a href="' . route('documentacion.show', $documentacion->id) . '"  class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>';
+        // })
         ->editColumn('detalles', function ($documentacion) {
-            return '<a href="' . route('documentacion.show', $documentacion->id) . '"  class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>';
+            $button = '<a href="' . route('documentacion.show', $documentacion->id) . '" class="btn btn-primary btn-sm tooltipsC"
+                aria-hidden="true" title="Detalles">
+                <i class="fa fa-bars"></i>
+              </a>';
+
+            if (auth()->user()->rol_id == 1) {
+                $button .= '<form action="' . route('documentacion.eliminar', $documentacion->id)  . '" class="d-inline"
+            method="POST">'
+                    . csrf_field() . method_field("delete") . '
+            <button type="submit" id="delete-user" class="btn btn-danger btn-sm tooltipsC  confirm-button" aria-hidden="true"
+              title="Eliminar este registro"><i class="fa fa-trash"></i>
+            </button>
+            </form>';
+            }
+            return $button;
         })
         ->rawColumns(['detalles'])
             ->toJson();

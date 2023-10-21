@@ -57,4 +57,5 @@ return [
     'uni_id'        => 'Unidad',
     'edit_user'     => 'Editar usuario',
     'tipo'          => 'Tipo',
+    'edit_doc'      => "Editar Documentacion"
 ];      

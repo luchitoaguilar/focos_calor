@@ -220,4 +220,78 @@ class DocumentacionController extends Controller
 
         return redirect()->route('documentacion.show', $outlet);
     }
+
+    /**
+     * Remove the specified outlet from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Outlet  $outlet
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function eliminar(Request $request, Outlet $outlet)
+    {
+        $foco = Documentacion::find($request->id)->delete();
+
+
+        // if ($request->get('outlet_id') == $outlet->id && $outlet->delete()) {
+            return redirect()->route('documentacion.index');
+        // }
+
+        // return back();
+    }
+
+    /**
+     * Show the form for editing the specified outlet.
+     *
+     * @param  \App\Outlet  $outlet
+     * @return \Illuminate\View\View
+     */
+    public function edit(Int $id)
+    {
+
+        $documentacion = Documentacion::findOrFail($id);
+
+        return view('documentacion.edit', compact('documentacion'));
+    }
+
+    /**
+     * Update the specified outlet in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Outlet  $outlet
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function update(Request $request, Outlet $outlets)
+    {
+        $this->authorize('update', $outlets);
+
+        $documentacion = Documentacion::find($request->id);
+
+        $documentacion->fill($request->all());
+// dd($request->file('archivo'));
+        if ($request->file('archivo')) {
+            $file = $request->file('archivo');
+
+            $nombres = 'archivo_' . time() . '.' . $file->getClientOriginalExtension();
+
+            $paths = 'assets/archivos/';
+
+            $file->move($paths, $nombres);
+
+            $direccion_archivo = $paths . $nombres;
+        } else {
+            if ($documentacion->archivo != '/assets/archivos/archivo_default.png' ) {
+                $direccion_archivo = $documentacion->archivo;
+            } else {
+                $direccion_archivo = "/assets/archivos/archivo_default.png";
+            }
+        }
+       
+
+        $documentacion->archivo = $direccion_archivo;
+//  dd($documentacion);
+        $documentacion->save();
+
+        return redirect()->route('documentacion.show', $documentacion);
+    }
 }
