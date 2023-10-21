@@ -51,7 +51,7 @@
                                         <select class="form-control formNuevo" name="unidad" id='unidad'>
                                             <option value=""> Selecciona una Unidad </option>
                                         </select>
-                                    @elseif (auth()->user()->uni_id > 1)
+                                    @elseif (auth()->user()->div_id > 1)
                                         <select class="form-control formNuevo" name="unidad" id='unidad'>
                                             <option value=""> Selecciona una Unidad </option>
                                             {{-- @if (auth()->user()->uni_id > 1) --}}
