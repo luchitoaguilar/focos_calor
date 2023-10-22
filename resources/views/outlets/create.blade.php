@@ -74,9 +74,9 @@
                                     <label for="nivel" class="control-label">{{ __('outlet.nivel') }}</label>
                                     <select class="form-control formNuevo" name="nivel" id='nivel'>
                                         <option selected>Seleccione el nivel</option>
-                                        <option value="Rojo">Rojo</option>
+                                        <option value="Rojo" style="color: red">Rojo</option>
                                         <option value="Amarillo" style="color: yellow">Amarillo</option>
-                                        <option value="Verde">Verde</option>
+                                        <option value="Verde" style="color: green">Verde</option>
                                     </select>
                                 </div>
                             </div>
