@@ -48,17 +48,17 @@ class OutletController extends Controller
      */
     public function divisiones(Request $request)
     {
-        $DIV1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 1)->get();
-        $DIV2 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 2)->get();
-        $DIV3 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 3)->get();
-        $DIV4 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 4)->get();
-        $DIV5 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 5)->get();
-        $DIV6 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 6)->get();
-        $DIV7 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 7)->get();
-        $DIV8 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 8)->get();
-        $DIV9 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 9)->get();
-        $DIV10 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 10)->get();
-        $DIVMEC1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 11)->get();
+        $DIV1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 2)->get();
+        $DIV2 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 3)->get();
+        $DIV3 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 4)->get();
+        $DIV4 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 5)->get();
+        $DIV5 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 6)->get();
+        $DIV6 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 7)->get();
+        $DIV7 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 8)->get();
+        $DIV8 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 9)->get();
+        $DIV9 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 10)->get();
+        $DIV10 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 11)->get();
+        $DIVMEC1 = Outlet::where('activo', 1)->where('eliminar', 1)->where('division', 12)->get();
 
         // $data = $divisiones->map(function ($divisiones) {
         //     return [
