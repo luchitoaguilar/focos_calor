@@ -31,7 +31,7 @@
                                     <td>{{ __('outlet.nivel') }}</td>
                                     <td>
                                         @if ($outlet->nivel == 'Primera Generación')
-                                            <div class="btn btn-danger" role="alert">
+                                            <div class="btn btn-success" role="alert">
                                                 Primera Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Segunda Generación')
@@ -39,19 +39,19 @@
                                                 Segunda Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Tercera Generación')
-                                            <div class="btn btn-success" role="alert">
+                                            <div class="btn btn-info" role="alert">
                                                 Tercera Generación
                                             </div>
                                             @elseif ($outlet->nivel == 'Cuarta Generación')
-                                            <div class="btn btn-warning" role="alert">
+                                            <div class="btn btn-secondary" role="alert">
                                                 Cuarta Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Quinta Generación')
-                                            <div class="btn btn-success" role="alert">
+                                            <div class="btn btn-primary" role="alert">
                                                 Quinta Generación
                                             </div>
                                             @elseif ($outlet->nivel == 'Sexta Generación')
-                                            <div class="btn btn-success" role="alert">
+                                            <div class="btn btn-danger" role="alert">
                                                 Sexta Generación
                                             </div>
                                         @endif
