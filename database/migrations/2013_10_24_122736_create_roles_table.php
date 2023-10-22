@@ -29,19 +29,19 @@ class CreateRolesTable extends Migration
         });
 
         \App\Models\Rol::create([
-            'rol'                   => 'ADMINISTRADOR',
+            'rol'                   => 'ADM. GENERAL',
             'creador_id'     => 1,
             'modificador_id' => 1,
         ]);
 
         \App\Models\Rol::create([
-            'rol'                   => 'DIVISION',
+            'rol'                   => 'ADM. GG.UU.CC',
             'creador_id'     => 1,
             'modificador_id' => 1,
         ]);
 
         \App\Models\Rol::create([
-            'rol'                   => 'UNIDAD',
+            'rol'                   => 'ADM.PP.UU.CC.',
             'creador_id'     => 1,
             'modificador_id' => 1,
         ]);

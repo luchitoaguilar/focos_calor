@@ -79,7 +79,7 @@ class Documentacion extends Model
     public static function dataTablePon(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'PON');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'PLANES');
         // dd($focos->id);
 
         return DataTables::of($documentacion)
@@ -97,7 +97,7 @@ class Documentacion extends Model
     public static function dataTableNva(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'NNVVAA');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'BASES LEGALES Y RESOLUCIONES');
         // dd($focos->id);
 
         return DataTables::of($documentacion)
@@ -115,7 +115,7 @@ class Documentacion extends Model
     public static function dataTableNs(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'NNSS');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'NN.VV.AA. y NN.SS.');
         // dd($focos->id);
 
         return DataTables::of($documentacion)
@@ -133,7 +133,7 @@ class Documentacion extends Model
     public static function dataTableBoletines(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'Boletines');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'BOLETINES');
         // dd($focos->id);
 
         return DataTables::of($documentacion)
@@ -151,7 +151,7 @@ class Documentacion extends Model
     public static function dataTableForm(): mixed
     {
         //ordenar fecha
-        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'Formulario');
+        $documentacion = Documentacion::orderBy('fecha', 'asc')->where('tipo', 'FORMULARIOS');
         // dd($focos->id);
 
         return DataTables::of($documentacion)

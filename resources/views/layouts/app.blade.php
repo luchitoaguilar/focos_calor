@@ -50,53 +50,53 @@
                     <li class="nav-item dropdown d-sm-block d-md-none">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Quienes Somos?
+                            QUINES SOMOS?
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('mision') }}">{{ __('Misión') }}</a>
-                            <a class="dropdown-item" href="{{ route('vision') }}">{{ __('Visión') }}</a>
-                            <a class="dropdown-item" href="{{ route('objetivo') }}">Objetivo</a>
+                            <a class="dropdown-item" href="{{ route('mision') }}">{{ __('MISIÓN') }}</a>
+                            <a class="dropdown-item" href="{{ route('vision') }}">{{ __('VISIÓN') }}</a>
+                            <a class="dropdown-item" href="{{ route('objetivo') }}">OBJETIVO</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('presentacion') }}">Presentación</a>
-                            <a class="dropdown-item" href="{{ route('objeto') }}">Objeto</a>
-                            <a class="dropdown-item" href="{{ route('finalidad') }}">Finalidad</a>
-                            <a class="dropdown-item" href="{{ route('importancia') }}">Importancia</a>
+                            <a class="dropdown-item" href="{{ route('presentacion') }}">PRESENTACIÓN</a>
+                            <a class="dropdown-item" href="{{ route('objeto') }}">OBJETO</a>
+                            <a class="dropdown-item" href="{{ route('finalidad') }}">FINALIDAD</a>
+                            <a class="dropdown-item" href="{{ route('importancia') }}">IMPORTANCIA</a>
                         </div>
                     </li>
                     @auth
                         <li class="nav-item dropdown d-sm-block d-md-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Documentación
+                                DOCUMENTACIÓN
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('pon') }}">{{ __('P.O.N.') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('NN.VV.AA.') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('NN.SS.') }}</a>
+                                <a class="dropdown-item" href="{{ route('pon') }}">{{ __('PLANES') }}</a>
+                                <a class="dropdown-item" href="#">{{ __('BASES LEGALES Y RESOLUCIONES') }}</a>
+                                <a class="dropdown-item" href="#">{{ __('NN.VV.AA. Y NN.SS.') }}</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Boletines</a>
-                                <a class="dropdown-item" href="#">Formulario EDAN</a>
+                                <a class="dropdown-item" href="#">BOLETINES</a>
+                                <a class="dropdown-item" href="#">FORMULARIOS</a>
                             </div>
                         </li>
                     @endauth
                     <li class="nav-item dropdown d-sm-block d-md-none">
-                        <a class="nav-link" href="{{ route('outlet_map.index') }}">{{ __('Departamentos') }}</a>
+                        <a class="nav-link" href="{{ route('outlet_map.index') }}">{{ __('DEPARTAMENTOS') }}</a>
                     </li>
 
                     <li class="nav-item dropdown d-sm-block d-md-none">
                         <a class="nav-link"
-                            href="{{ route('outlet_map.guarniciones') }}">{{ __('Jurisdicciones') }}</a>
+                            href="{{ route('outlet_map.guarniciones') }}">{{ __('JURISDICCIONES') }}</a>
                     </li>
                     @auth
                         <li class="nav-item dropdown d-sm-block d-md-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Opciones
+                                OPCIONES
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('outlets.index') }}">{{ __('Focos Calor') }}</a>
-                                <a class="dropdown-item" href="{{ route('register.index') }}">{{ __('Usuarios') }}</a>
-                                <a class="dropdown-item" href="#">{{ __('Documentacion') }}</a>
+                                <a class="dropdown-item" href="{{ route('outlets.index') }}">{{ __('FOCOS DE CALOR') }}</a>
+                                <a class="dropdown-item" href="{{ route('register.index') }}">{{ __('USUARIOS') }}</a>
+                                <a class="dropdown-item" href="#">{{ __('DOCUMENTACION') }}</a>
                                 <div class="dropdown-divider"></div>
                             </div>
                         </li>
@@ -150,7 +150,7 @@
                         class="list-group-item list-group-item-action flex-column align-items-start" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-question fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Quienes Somos?</span>
+                            <span class="menu-collapsed">QUIENES SOMOS?</span>
                             <span class="submenu-icon ml-auto"></span>
                         </div>
                     </a>
@@ -158,29 +158,29 @@
                     <div id='submenu1' class="collapse sidebar-submenu">
                         <a href="{{ route('mision') }}"
                             class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Misión</span>
+                            <span class="menu-collapsed">MISIÓN</span>
                         </a>
                         <a href="{{ route('vision') }}"
                             class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Visión</span>
+                            <span class="menu-collapsed">VISIÓN</span>
                         </a>
                         <a href="{{ route('objetivo') }}"
                             class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Objetivo</span>
+                            <span class="menu-collapsed">OBJETIVO</span>
                         </a>
                         <!-- Separator without title -->
                         <li class="list-group-item sidebar-separator menu-collapsed"></li>
                         <a href="{{ route('presentacion') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Presentación</span>
+                            <span class="menu-collapsed">PRESENTACIÓN</span>
                         </a>
                         <a href="{{ route('objeto') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Objeto</span>
+                            <span class="menu-collapsed">OBJETO</span>
                         </a>
                         <a href="{{ route('finalidad') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Finalidad</span>
+                            <span class="menu-collapsed">FINALIDAD</span>
                         </a>
                         <a href="{{ route('importancia') }}" class="list-group-item list-group-item-action text-white" style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Importancia</span>
+                            <span class="menu-collapsed">IMPORTANCIA</span>
                         </a>
                     </div>
                     @auth
@@ -188,40 +188,40 @@
                             class="list-group-item list-group-item-action flex-column align-items-start" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file-text fa-fw mr-3"></span>
-                                <span class="menu-collapsed">Documentacion</span>
+                                <span class="menu-collapsed">DOCUMENTACIÓN</span>
                                 <span class="submenu-icon ml-auto"></span>
                             </div>
                         </a>
                         <!-- Submenu content -->
                         <div id='submenu2' class="collapse sidebar-submenu">
                             <a href="{{ route('documentacion.pon.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                                <span class="menu-collapsed">Planes y P.O.N.</span>
+                                <span class="menu-collapsed">PLANES</span>
                             </a>
                             <a href="{{ route('documentacion.nva.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                                <span class="menu-collapsed">Bases Legales y resoluciones</span>
+                                <span class="menu-collapsed">BASES LEGALES Y RESOLUCIONES</span>
                             </a>
                             <a href="{{ route('documentacion.ns.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
                                 <span class="menu-collapsed">NN.VV.AA y NN.SS.</span>
                             </a>
                             <li class="list-group-item sidebar-separator menu-collapsed"></li>
                         <a href="{{ route('documentacion.boletines.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Boletines</span>
+                            <span class="menu-collapsed">BOLETINES</span>
                         </a>
                         <a href="{{ route('documentacion.form.index') }}" class="list-group-item list-group-item-action text-white"  style="background-color: #6a9eda">-
-                            <span class="menu-collapsed">Formulario EDAN</span>
+                            <span class="menu-collapsed">FORMULARIOS</span>
                         </a>
                         </div>
                     @endauth
                     <a href="{{ route('outlet_map.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-home fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Departamentos</span>
+                            <span class="menu-collapsed">DEPARTAMENTOS</span>
                         </div>
                     </a>
                     <a href="{{ route('outlet_map.guarniciones') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-institution fa-fw mr-3"></span>
-                            <span class="menu-collapsed">Jurisdicciones</span>
+                            <span class="menu-collapsed">JURISDICCIONES</span>
                         </div>
                     </a>
                     @auth
@@ -234,19 +234,19 @@
                         <a href="{{ route('register.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1" >
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-users fa-fw mr-3"></span>
-                                <span class="menu-collapsed">Usuarios</span>
+                                <span class="menu-collapsed">USUARIOS</span>
                             </div>
                         </a>
                         <a href="{{ route('documentacion.index') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-file fa-fw mr-3"></span>
-                                <span class="menu-collapsed">Documentacion</span>
+                                <span class="menu-collapsed">DOCUMENTACION</span>
                             </div>
                         </a>
                         <a href="{{ route('outlets.index')}}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
                             <div class="d-flex w-100 justify-content-start align-items-center">
                                 <span class="fa fa-fire fa-fw mr-3"></span>
-                                <span class="menu-collapsed">Focos Calor</span>
+                                <span class="menu-collapsed">FOCOS DE CALOR</span>
                             </div>
                         </a>
                     @endauth

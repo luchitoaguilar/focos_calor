@@ -19,6 +19,7 @@
                         <br>
 
                         <div class="table-responsive">
+                            <img src="{{ asset('smatife.png') }}" alt="Trulli" width="300" height="100">
                             <table id="tabla-documentacion" name="tabla-documentacion"
                                 class="table table-striped table-bordered align-middle">
                             </table>

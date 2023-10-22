@@ -62,20 +62,18 @@
                                         <label for="tipo" class="control-label">{{ __('outlet.tipo') }}</label>
                                         <select class="form-control formNuevo" name="tipo" id='tipo'>
                                             <option>Seleccione el nivel</option>
-                                            <option value="PON" {{ $documentacion->tipo == 'PON' ? 'selected' : '' }}>
-                                                Planes y P.O.N</option>
-                                            <option value="NNVVAA"
-                                                {{ $documentacion->tipo == 'NNVVAA' ? 'selected' : '' }}>Bases legales y
-                                                resoluciones
+                                            <option value="PLANES" {{ $documentacion->tipo == 'PLANES' ? 'selected' : '' }}>
+                                                PLANES</option>
+                                            <option value="BASES LEGALES Y RESOLUCIONES"
+                                                {{ $documentacion->tipo == 'BASES LEGALES Y RESOLUCIONES' ? 'selected' : '' }}>BASES LEGALES Y RESOLUCIONES
                                             </option>
-                                            <option value="NNSS" {{ $documentacion->tipo == 'NNSS' ? 'selected' : '' }}>
+                                            <option value="NN.VV.AA. y NN.SS." {{ $documentacion->tipo == 'NN.VV.AA. y NN.SS.' ? 'selected' : '' }}>
                                                 NN.VV.AA. y NN.SS.</option>
-                                            <option value="Boletines"
-                                                {{ $documentacion->tipo == 'Boletines' ? 'selected' : '' }}>Boletines
+                                            <option value="BOLETINES"
+                                                {{ $documentacion->tipo == 'BOLETINES' ? 'selected' : '' }}>BOLETINES
                                             </option>
-                                            <option value="Formulario"
-                                                {{ $documentacion->tipo == 'Formulario' ? 'selected' : '' }}>Formulario
-                                                EDAN</option>
+                                            <option value="FORMULARIOS"
+                                                {{ $documentacion->tipo == 'FORMULARIOS' ? 'selected' : '' }}>FORMULARIOS</option>
                                         </select>
                                     </div>
                                 </div>

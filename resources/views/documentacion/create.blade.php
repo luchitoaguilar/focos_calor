@@ -61,11 +61,11 @@
                                         <label for="tipo" class="control-label">{{ __('outlet.tipo') }}</label>
                                         <select class="form-control formNuevo" name="tipo" id='tipo'>
                                             <option selected>Seleccione el Tipo de Documentacion</option>
-                                            <option value="PON">Planes y P.O.N</option>
-                                            <option value="NNVVAA">BAases legales y resoluciones.</option>
-                                            <option value="NNSS">NN.VV.AA. y NN.SS.</option>
-                                            <option value="Boletines">Boletines</option>
-                                            <option value="Formulario">Formulario EDAN</option>
+                                            <option value="PLANES">PLANES</option>
+                                            <option value="BASES LEGALES Y RESOLUCIONES">BASES LEGALES Y RESOLUCIONES</option>
+                                            <option value="NN.VV.AA. y NN.SS.">NN.VV.AA. y NN.SS.</option>
+                                            <option value="BOLETINES">BOLETINES</option>
+                                            <option value="FORMULARIOS">FORMULARIOS</option>
                                         </select>
                                     </div>
                                 </div>

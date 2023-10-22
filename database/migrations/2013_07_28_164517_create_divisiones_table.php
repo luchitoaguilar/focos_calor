@@ -57,7 +57,7 @@ class CreateDivisionesTable extends Migration
         ]);
         \App\Models\Divisiones::create([
             'codigo'          => 'DIV-4',
-            'nombre'              => 'CUARTO DIVISION',
+            'nombre'              => 'CUARTA DIVISION',
             'ubicacion'     => 'CAMIRI',
             'tipo'     => 'GG.UU',
             'creador_id' => 1,
