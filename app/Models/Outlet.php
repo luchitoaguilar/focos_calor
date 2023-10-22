@@ -118,12 +118,18 @@ class Outlet extends Model
                 return $unidad->nombre;
             })
             ->addColumn('nivel', function ($focos) {
-                if ($focos->nivel == 'Rojo') {
-                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-danger btn-flat margin disabled">Rojo</button></div>';
-                } elseif (($focos->nivel == 'Amarillo')) {
+                if ($focos->nivel == 'Primera Generación') {
+                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-success btn-flat margin disabled">Rojo</button></div>';
+                } elseif (($focos->nivel == 'Segunda Generación')) {
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-warning btn-flat margin disabled" style="text-align:center;display:block">Amarillo</button></div>';
-                } elseif (($focos->nivel == 'Verde')) {
-                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-success btn-flat margin disabled" style="text-align:center;display:block">Verde</button></div>';
+                } elseif (($focos->nivel == 'Tercera Generación')) {
+                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-info btn-flat margin disabled" style="text-align:center;display:block">Verde</button></div>';
+                } elseif (($focos->nivel == 'Cuarta Generación')) {
+                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-secondary btn-flat margin disabled" style="text-align:center;display:block">Amarillo</button></div>';
+                } elseif (($focos->nivel == 'Quinta Generación')) {
+                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-primary btn-flat margin disabled" style="text-align:center;display:block">Verde</button></div>';
+                } elseif (($focos->nivel == 'Sexta Generacion')) {
+                    return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-danger btn-flat margin disabled" style="text-align:center;display:block">Verde</button></div>';
                 }
             })
             ->addColumn('estado', function ($focos) {
