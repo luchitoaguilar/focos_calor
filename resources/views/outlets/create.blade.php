@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label for="descripcion" class="control-label">{{ __('outlet.descripcion') }}</label>
                             <textarea id="descripcion" class="form-control{{ $errors->has('descripcion') ? ' is-invalid' : '' }}" name="descripcion"
-                                rows="4">{{ old('descripcion') }}</textarea>
+                                rows="4" required>{{ old('descripcion') }}</textarea>
                             {!! $errors->first('descripcion', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                         </div>
                         <div class="row">
@@ -29,7 +29,7 @@
                                     <label for="latitude" class="control-label">{{ __('outlet.division') }}</label>
                                     <select
                                         class="selectpicker form-control{{ $errors->has('latitude') ? ' is-invalid' : '' }}"
-                                        id="division" name="division">
+                                        id="division" name="division" required>
                                         <option value=""> Selecciona una Division </option>
                                         @foreach ($divisiones as $divisiones)
                                             @if (auth()->user()->rol_id == 1)
@@ -48,7 +48,7 @@
                                 <div class="form-group">
                                     <label for="unidad" class="control-label">{{ __('outlet.unidad') }}</label>
                                     @if (auth()->user()->rol_id == 1)
-                                        <select class="form-control formNuevo" name="unidad" id='unidad'>
+                                        <select class="form-control formNuevo placeholder" name="unidad" id='unidad' required>
                                             <option value=""> Selecciona una Unidad </option>
                                         </select>
                                     @elseif (auth()->user()->div_id > 1)
@@ -72,8 +72,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nivel" class="control-label">{{ __('outlet.nivel') }}</label>
-                                    <select class="form-control formNuevo" name="nivel" id='nivel' required>
-                                        <option >Seleccione el nivel</option>
+                                    <select class="form-control formNuevo placeholder" name="nivel" id='nivel' required>
+                                        <option value="" >Seleccione el nivel</option>
                                         <option value="Primera Generación" style="color: green">Primera Generación</option>
                                         <option value="Segunda Generación" style="color: yellow">Segunda Generación</option>
                                         <option value="Tercera Generación" style="color: orange">Tercera Generación</option>
@@ -86,13 +86,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="unidad_apoyo" class="control-label">{{ __('outlet.unidad_apoyo') }}</label>
-                                    <select class="form-control formNuevo" name="unidad_apoyo" id='unidad_apoyo' required>
-                                        <option >Seleccione el tipo de Unidad</option>
+                                    <select class="form-control formNuevo placeholder" name="unidad_apoyo" id='unidad_apoyo' required >
+                                        <option value="" >Seleccione el tipo de Unidad</option>
                                         <option value="1">Patrulla</option>
                                         <option value="2">Seccion</option>
                                         <option value="3">Compañia</option>
                                         <option value="4">Regimiento</option>
                                     </select>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -140,8 +141,8 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="apoyo" class="control-label">{{ __('outlet.apoyo') }}</label>
-                                    <select class="form-control formNuevo" name="apoyo" id='apoyo' required>
-                                        <option >Seleccione el nivel</option>
+                                    <select class="form-control formNuevo placeholder" name="apoyo" id='apoyo' required>
+                                        <option value="" >Seleccione el nivel</option>
                                         <option value="Gobernacion">Gobernacion</option>
                                         <option value="Alcaldia">Alcaldia</option>
                                         <option value="Bomberos">Bomberos</option>
