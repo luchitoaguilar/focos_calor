@@ -72,8 +72,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nivel" class="control-label">{{ __('outlet.nivel') }}</label>
-                                    <select class="form-control formNuevo" name="nivel" id='nivel'>
-                                        <option selected>Seleccione el nivel</option>
+                                    <select class="form-control formNuevo" name="nivel" id='nivel' required>
+                                        <option >Seleccione el nivel</option>
                                         <option value="Primera Generación" style="color: green">Primera Generación</option>
                                         <option value="Segunda Generación" style="color: yellow">Segunda Generación</option>
                                         <option value="Tercera Generación" style="color: orange">Tercera Generación</option>
@@ -87,7 +87,7 @@
                                 <div class="form-group">
                                     <label for="unidad_apoyo" class="control-label">{{ __('outlet.unidad_apoyo') }}</label>
                                     <select class="form-control formNuevo" name="unidad_apoyo" id='unidad_apoyo' required>
-                                        <option selected>Seleccione el tipo de Unidad</option>
+                                        <option >Seleccione el tipo de Unidad</option>
                                         <option value="1">Patrulla</option>
                                         <option value="2">Seccion</option>
                                         <option value="3">Compañia</option>
@@ -109,7 +109,7 @@
                                                     <label for="acciones"
                                                         class="control-label">{{ __('outlet.acciones') }}</label>
                                                     <textarea id="acciones" class="form-control{{ $errors->has('acciones') ? ' is-invalid' : '' }}" name="acciones"
-                                                        rows="4">{{ old('acciones') }}</textarea>
+                                                        rows="4" required>{{ old('acciones') }}</textarea>
                                                     {!! $errors->first('acciones', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                                     <label for="rrhh"
                                                         class="control-label">{{ __('outlet.rrhh') }}</label>
                                                     <textarea id="rrhh" class="form-control{{ $errors->has('rrhh') ? ' is-invalid' : '' }}" name="rrhh"
-                                                        rows="4">{{ old('rrhh') }}</textarea>
+                                                        rows="4" required>{{ old('rrhh') }}</textarea>
                                                     {!! $errors->first('rrhh', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@
                                                     <label for="rr_log"
                                                         class="control-label">{{ __('outlet.rr_log') }}</label>
                                                     <textarea id="rr_log" class="form-control{{ $errors->has('rr_log') ? ' is-invalid' : '' }}" name="rr_log"
-                                                        rows="4">{{ old('rr_log') }}</textarea>
+                                                        rows="4" required>{{ old('rr_log') }}</textarea>
                                                     {!! $errors->first('rr_log', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                                 </div>
                                             </div>
@@ -140,8 +140,8 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="apoyo" class="control-label">{{ __('outlet.apoyo') }}</label>
-                                    <select class="form-control formNuevo" name="apoyo" id='apoyo'>
-                                        <option selected>Seleccione el nivel</option>
+                                    <select class="form-control formNuevo" name="apoyo" id='apoyo' required>
+                                        <option >Seleccione el nivel</option>
                                         <option value="Gobernacion">Gobernacion</option>
                                         <option value="Alcaldia">Alcaldia</option>
                                         <option value="Bomberos">Bomberos</option>
@@ -156,7 +156,7 @@
                                     <input id="efectivo"
                                         class="form-control{{ $errors->has('efectivo') ? ' is-invalid' : '' }}"
                                         name="efectivo" type="number"
-                                        placeholder="Ingrese el efectivo a ser empleado" />
+                                        placeholder="Ingrese el efectivo a ser empleado" required/>
                                     {!! $errors->first('efectivo', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                     <label for="fecha" class="control-label">{{ __('outlet.fecha') }}</label>
                                     <input id="fecha"
                                         class="form-control{{ $errors->has('fecha') ? ' is-invalid' : '' }}"
-                                        name="fecha" type="date" placeholder="Ingrese el fecha" />
+                                        name="fecha" type="date" placeholder="Ingrese el fecha" required/>
                                     {!! $errors->first('fecha', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                 </div>
                             </div>
@@ -247,7 +247,7 @@
                                     <label for="encargado" class="control-label">{{ __('outlet.encargado') }}</label>
                                     <input id="encargado"
                                         class="form-control{{ $errors->has('encargado') ? ' is-invalid' : '' }}"
-                                        name="encargado" type="text" placeholder="Ingrese Nombre del encargado" />
+                                        name="encargado" type="text" placeholder="Ingrese Nombre del encargado" required/>
                                     {!! $errors->first('encargado', '<span class="invalid-feedback" role="alert">:message</span>') !!}
                                 </div>
                             </div>
