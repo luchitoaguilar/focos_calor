@@ -76,9 +76,9 @@ class Outlet extends Model
      */
     public function getMapPopupContentAttribute()
     {
-        dd($this->unidad);
+        // dd($this->unidad);
         $division = Divisiones::where('id', $this->division)->first();
-        $unidad = Unidades::where('dependencia', $this->unidad)->first();
+        $unidad = Unidades::where('id', $this->unidad)->first();
 
         $mapPopupContent = '';
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.name') . ':</strong><br>' . $this->name_link . '</div>';
