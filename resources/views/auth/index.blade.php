@@ -61,4 +61,10 @@
                 });
         });
     </script>
+
+<style>
+    .table thead th {
+        background-color: #C6DBDA;
+    }
+</style>
 @endpush
