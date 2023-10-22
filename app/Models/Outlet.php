@@ -83,7 +83,7 @@ class Outlet extends Model
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.name') . ':</strong><br>' . $this->name_link . '</div>';
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.coordinate') . ':</strong><br>' . $this->coordinate . '</div>';
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.division') . ':</strong><br>' . $division['nombre'] . '</div>';
-        // $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.division') . ':</strong><br>' . $unidad['nombre'] . '</div>';
+        $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.division') . ':</strong><br>' . $unidad['nombre'] . '</div>';
         if ($this->nivel == 'Rojo') {
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-danger" role="alert">' . $this->nivel . '</div></div>';
         } elseif ($this->nivel == 'Amarillo') {
