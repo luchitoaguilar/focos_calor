@@ -22,9 +22,9 @@ class CreateOutletsTable extends Migration
             $table->integer('division');
             $table->integer('unidad');
             $table->string('nivel', 10)->nullable();
-            $table->string('acciones', 2500)->nullable();
-            $table->string('rrhh', 2500)->nullable();
-            $table->string('rr_log', 2500)->nullable();
+            $table->string('acciones', 5000)->nullable();
+            $table->string('rrhh', 5000)->nullable();
+            $table->string('rr_log', 5000)->nullable();
             $table->string('apoyo',250)->nullable();
             $table->integer('efectivo')->nullable();
             $table->integer('unidad_apoyo')->nullable();
