@@ -31,23 +31,23 @@
                                     <td>{{ __('outlet.nivel') }}</td>
                                     <td>
                                         @if ($outlet->nivel == 'Primera Generación')
-                                            <div class="btn btn-success" role="alert">
+                                            <div class="btn btn-light" role="alert">
                                                 Primera Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Segunda Generación')
-                                            <div class="btn btn-warning" role="alert">
+                                            <div class="btn btn-success" role="alert">
                                                 Segunda Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Tercera Generación')
-                                            <div class="btn btn-info" role="alert">
+                                            <div class="btn btn-primary" role="alert">
                                                 Tercera Generación
                                             </div>
                                             @elseif ($outlet->nivel == 'Cuarta Generación')
-                                            <div class="btn btn-secondary" role="alert">
+                                            <div class="btn btn-warning" role="alert">
                                                 Cuarta Generación
                                             </div>
                                         @elseif ($outlet->nivel == 'Quinta Generación')
-                                            <div class="btn btn-primary" role="alert">
+                                            <div class="btn btn-orange" role="alert">
                                                 Quinta Generación
                                             </div>
                                             @elseif ($outlet->nivel == 'Sexta Generación')
