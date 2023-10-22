@@ -25,7 +25,7 @@ $(function () {
             { data: 'latitude', name: 'latitude', title: 'Latitud', orderable: false, searchable: true },
             { data: 'longitude', name: 'longitude', title: 'Longitud', orderable: false, searchable: true },
             { data: 'estado', name: 'estado', title: 'Estado', orderable: false, searchable: false },
-            // { data: 'detalles', name: 'detalles', title: 'Opciones', orderable: false, searchable: false },
+            { data: 'detalles', name: 'detalles', title: 'Opciones', orderable: false, searchable: false },
         ],
         // language: { 'url': ruta_tabla_traduccion },
         dom: 'lfiptip',
