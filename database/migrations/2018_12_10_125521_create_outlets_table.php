@@ -25,15 +25,15 @@ class CreateOutletsTable extends Migration
             $table->string('acciones', 5000)->nullable();
             $table->string('rrhh', 5000)->nullable();
             $table->string('rr_log', 5000)->nullable();
-            $table->string('apoyo',250)->nullable();
+            $table->string('apoyo',5000)->nullable();
             $table->integer('efectivo')->nullable();
             $table->integer('unidad_apoyo')->nullable();
             $table->date('fecha');
-            $table->string('foto', 250)->nullable();
-            $table->string('video', 250)->nullable();
-            $table->string('archivo', 250)->nullable();
-            $table->string('resumen', 250)->nullable();
-            $table->string('encargado', 250);
+            $table->string('foto', 5000)->nullable();
+            $table->string('video', 5000)->nullable();
+            $table->string('archivo', 5000)->nullable();
+            $table->string('resumen', 5000)->nullable();
+            $table->string('encargado', 5000);
 
             $table->integer('activo')->default(1);
             $table->integer('eliminar')->default(1);
