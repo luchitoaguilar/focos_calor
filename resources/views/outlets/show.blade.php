@@ -30,17 +30,29 @@
                                 <tr>
                                     <td>{{ __('outlet.nivel') }}</td>
                                     <td>
-                                        @if ($outlet->nivel == 'Rojo')
+                                        @if ($outlet->nivel == 'Primera Generación')
                                             <div class="btn btn-danger" role="alert">
-                                                Rojo
+                                                Primera Generación
                                             </div>
-                                        @elseif ($outlet->nivel == 'Amarillo')
+                                        @elseif ($outlet->nivel == 'Segunda Generación')
                                             <div class="btn btn-warning" role="alert">
-                                                Amarillo
+                                                Segunda Generación
                                             </div>
-                                        @elseif ($outlet->nivel == 'Verde')
+                                        @elseif ($outlet->nivel == 'Tercera Generación')
                                             <div class="btn btn-success" role="alert">
-                                                Verde
+                                                Tercera Generación
+                                            </div>
+                                            @elseif ($outlet->nivel == 'Cuarta Generación')
+                                            <div class="btn btn-warning" role="alert">
+                                                Cuarta Generación
+                                            </div>
+                                        @elseif ($outlet->nivel == 'Quinta Generación')
+                                            <div class="btn btn-success" role="alert">
+                                                Quinta Generación
+                                            </div>
+                                            @elseif ($outlet->nivel == 'Sexta Generación')
+                                            <div class="btn btn-success" role="alert">
+                                                Sexta Generación
                                             </div>
                                         @endif
                                     </td>
