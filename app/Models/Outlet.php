@@ -78,7 +78,7 @@ class Outlet extends Model
     {
         $division = Divisiones::where('id', $this->division)->first();
         $unidad = Unidades::where('dependencia', $this->unidad)->first();
-dd($unidad);
+// dd($unidad);
         $mapPopupContent = '';
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.name') . ':</strong><br>' . $this->name_link . '</div>';
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.coordinate') . ':</strong><br>' . $this->coordinate . '</div>';
