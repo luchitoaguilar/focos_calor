@@ -128,7 +128,7 @@ class Outlet extends Model
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-secondary btn-flat margin disabled" style="text-align:center;display:block">Cuarta Generación</button></div>';
                 } elseif (($focos->nivel == 'Quinta Generación')) {
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-primary btn-flat margin disabled" style="text-align:center;display:block">Quinta Generación</button></div>';
-                } elseif (($focos->nivel == 'Sexta Generacion')) {
+                } elseif (($focos->nivel == 'Sexta Generación')) {
                     return '<div class="d-flex justify-content-center"><button type="button" class="btn bg-danger btn-flat margin disabled" style="text-align:center;display:block">Sexta Generación</button></div>';
                 }
             })
