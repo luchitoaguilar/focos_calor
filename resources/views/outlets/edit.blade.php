@@ -99,13 +99,20 @@
                                                     class="control-label">{{ __('outlet.nivel') }}</label>
                                                 <select class="form-control formNuevo" name="nivel" id='nivel'>
                                                     <option>Seleccione el nivel</option>
-                                                    <option value="Rojo"
-                                                        {{ $outlet->nivel == 'Rojo' ? 'selected' : '' }}>Rojo</option>
-                                                    <option value="Amarillo"
-                                                        {{ $outlet->nivel == 'Amarillo' ? 'selected' : '' }}>Amarillo
+                                                    <option value="Primera Generación"
+                                                        {{ $outlet->nivel == 'Primera Generación' ? 'selected' : '' }}>Primera Generación</option>
+                                                    <option value="Segunda Generación"
+                                                        {{ $outlet->nivel == 'Segunda Generación' ? 'selected' : '' }}>Segunda Generación
                                                     </option>
-                                                    <option value="Verde"
-                                                        {{ $outlet->nivel == 'Verde' ? 'selected' : '' }}>Verde</option>
+                                                    <option value="Tercera Generación"
+                                                        {{ $outlet->nivel == 'Tercera Generación' ? 'selected' : '' }}>Tercera Generación</option>
+                                                        <option value="Cuarta Generación"
+                                                        {{ $outlet->nivel == 'Cuarta Generación' ? 'selected' : '' }}>Cuarta Generación</option>
+                                                    <option value="Quinta Generación"
+                                                        {{ $outlet->nivel == 'Quinta Generación' ? 'selected' : '' }}>Quinta Generación
+                                                    </option>
+                                                    <option value="Sexta Generación"
+                                                        {{ $outlet->nivel == 'Sexta Generación' ? 'selected' : '' }}>Sexta Generación</option>
                                                 </select>
                                             </div>
                                         </div>

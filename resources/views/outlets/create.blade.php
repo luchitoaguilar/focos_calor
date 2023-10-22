@@ -74,9 +74,12 @@
                                     <label for="nivel" class="control-label">{{ __('outlet.nivel') }}</label>
                                     <select class="form-control formNuevo" name="nivel" id='nivel'>
                                         <option selected>Seleccione el nivel</option>
-                                        <option value="Rojo" style="color: red">Rojo</option>
-                                        <option value="Amarillo" style="color: yellow">Amarillo</option>
-                                        <option value="Verde" style="color: green">Verde</option>
+                                        <option value="Primera Generación" style="color: green">Primera Generación</option>
+                                        <option value="Segunda Generación" style="color: yellow">Segunda Generación</option>
+                                        <option value="Tercera Generación" style="color: orange">Tercera Generación</option>
+                                        <option value="Cuarta Generación" style="color: pink">Cuarta Generación</option>
+                                        <option value="Quinta Generación" style="color: magenta">Quinta Generación</option>
+                                        <option value="Sexta Generación" style="color: red">Sexta Generación</option>
                                     </select>
                                 </div>
                             </div>
