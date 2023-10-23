@@ -4,7 +4,7 @@
         <!-- Left -->
         <div class="col-lg-12" style="text-align: center;">
             <h3>
-                SISTEMA DE MONITOREO DE ALERTA TEMPRANA DE INCENDIOS FORESTALES DEL EJÉRCITO
+                SISTEMA DE MONITOREO DE ALERTA TEMPRANA PARA EL EJÉRCITO DE BOLIVIA, EN EL CONTROL DE INCENDIOS FORESTALES EN SUS JURISDICCIONES
             </h3>
         </div>
         <!-- Left -->
