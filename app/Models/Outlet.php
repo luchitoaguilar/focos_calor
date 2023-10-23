@@ -93,7 +93,7 @@ class Outlet extends Model
             $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.nivel') . ':</strong><br><div class="alert alert-success" role="alert">' . $this->nivel . '</div></div>';
         }
         $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.unidad_apoyo') . ':</strong><br><img src="' . asset('assets/' . $this->unidad_apoyo . '.jpeg') . '"  width="60" height="50" /></div>';
-
+        $mapPopupContent .= '<div class="my-2"><strong>' . __('outlet.foto') . ':</strong><br><img src="' . asset('' . $this->foto . '') . '"  width="60" height="50" /></div>';
 
         return $mapPopupContent;
     }
@@ -110,7 +110,7 @@ class Outlet extends Model
         return DataTables::of($focos)
             ->addIndexColumn()
             ->addColumn('division', function ($focos) {
-                $division = Divisiones::where('id', $focos->division)->first();
+                $division = Divisiones::where('id', $focos->division + 1)->first();
                 return $division->nombre;
             })
             ->addColumn('unidad', function ($focos) {
