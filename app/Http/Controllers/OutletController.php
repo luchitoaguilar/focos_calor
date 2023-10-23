@@ -175,7 +175,7 @@ class OutletController extends Controller
         $outlet->video = $direccion_video;
         $outlet->archivo = $direccion_archivo;
         $outlet->resumen = $direccion_resumen;
-        $outlet->division = $request->division;
+        $outlet->division = $request->division+1;
         $outlet->unidad = $request->unidad;
 
         // $outlet->lugar_nacimiento_id = $request->lugar_nacimiento_id;
