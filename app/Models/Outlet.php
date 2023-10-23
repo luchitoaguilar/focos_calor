@@ -106,12 +106,12 @@ class Outlet extends Model
     {
         //ordenar fecha
         $focos = Outlet::orderBy('fecha', 'desc')->where('eliminar', '!=', 0)->get();
-        $division = Divisiones::where('id', ($focos->division+1))->first();
-        dd($division);
+
         return DataTables::of($focos)
             ->addIndexColumn()
             ->addColumn('division', function ($focos) {
                 $division = Divisiones::where('id', ($focos->division+1))->first();
+                dd($division);
                 return $division->nombre;
             })
             ->addColumn('unidad', function ($focos) {
