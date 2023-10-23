@@ -416,14 +416,14 @@
                     })
 
                 })
-            } else {
-
+            } 
+            
                 ///select de unidades
                 $('#division').on('change', function(e) {
 
                     var dependencia = e.target.value;
 
-                    $.get('/outlets/unidad_dependiente/' + dependencia, function(data) {
+                    $.get('/outlets/unidad_dependiente/' + (dependencia -1)   , function(data) {
 
                         $('#unidad').empty();
 
@@ -437,7 +437,7 @@
 
                     })
                 });
-            }
+          
 
 
 
