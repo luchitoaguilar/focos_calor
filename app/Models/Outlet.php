@@ -110,7 +110,7 @@ class Outlet extends Model
         return DataTables::of($focos)
             ->addIndexColumn()
             ->addColumn('division', function ($focos) {
-                $division = Divisiones::where('id', $focos->division + 1)->first();
+                $division = Divisiones::where('id', $focos->division)->first();
                 return $division->nombre;
             })
             ->addColumn('unidad', function ($focos) {
