@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
 
 Route::get('/', 'OutletMapController@index');
 
@@ -38,6 +38,7 @@ Route::delete('/usuarios/eliminar/{id}', [App\Http\Controllers\Auth\RegisterCont
 Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
 Route::get('/our_outlets/guarniciones', 'OutletMapController@index_guarniciones')->name('outlet_map.guarniciones');
 Route::get('/our_outlets/uudd', 'OutletMapController@index_unidades')->name('outlet_map.uudd');
+Route::get('/our_outlets/ceo', 'OutletMapController@ceo')->name('outlet_map.ceo');
 Route::get('/outlets/listar', [App\Http\Controllers\OutletController::class, 'listar'])->name('listar_outlets');
 Route::delete('/outlets/eliminar/{id}', [App\Http\Controllers\OutletController::class, 'eliminar'])->name('outlets.eliminar');
 Route::get('/outlets/activar/{id}', [App\Http\Controllers\OutletController::class, 'activar'])->name('outlets.activar');

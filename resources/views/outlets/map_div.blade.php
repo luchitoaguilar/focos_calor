@@ -125,7 +125,7 @@
         // var owm = new L.OWMLayer({ key: "7e52f30bbc0a5fb4e633933eed3291c8" });
         // map.addLayer(owm);
 
-        Temp.addTo(map);
+        // Temp.addTo(map);
 
         var overlays = {
             Temperatura: Temp,

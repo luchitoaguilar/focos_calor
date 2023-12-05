@@ -40,5 +40,16 @@ class OutletMapController extends Controller
         return view('outlets.map_uudd');
     }
 
+      /**
+     * Show the outlet listing in LeafletJS map.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\View\View
+     */
+    public function ceo(Request $request)
+    {
+        return view('outlets.ceo');
+    }
+
     
 }

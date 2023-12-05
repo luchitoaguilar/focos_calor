@@ -87,6 +87,10 @@
                         <a class="nav-link"
                             href="{{ route('outlet_map.guarniciones') }}">{{ __('JURISDICCIONES') }}</a>
                     </li>
+                    <li class="nav-item dropdown d-sm-block d-md-none">
+                        <a class="nav-link"
+                            href="{{ route('outlet_map.ceo') }}">{{ __('CEO') }}</a>
+                    </li>
                     @auth
                         <li class="nav-item dropdown d-sm-block d-md-none">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -222,6 +226,12 @@
                         <div class="d-flex w-100 justify-content-start align-items-center">
                             <span class="fa fa-institution fa-fw mr-3"></span>
                             <span class="menu-collapsed">JURISDICCIONES</span>
+                        </div>
+                    </a>
+                    <a href="{{ route('outlet_map.ceo') }}" class="list-group-item list-group-item-action" style="background-color: #5086c1">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fa fa-globe fa-fw mr-3"></span>
+                            <span class="menu-collapsed">CEO</span>
                         </div>
                     </a>
                     @auth
